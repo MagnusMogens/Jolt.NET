@@ -100,12 +100,15 @@ namespace Jolt.NET
             timer = new Timer(time, autoEvent, milliSeconds, milliSeconds);
         }
 
-        private void ChangeTimer(int milliSeconds)
+        private async void ChangeTimer(int milliSeconds)
         {
             if (milliSeconds == 0)
                 timer.Dispose();
             else
+            {
+                await PingSession(autoStatus);
                 timer.Change(milliSeconds, milliSeconds);
+            }
         }
 
         public void EndAutoPing()

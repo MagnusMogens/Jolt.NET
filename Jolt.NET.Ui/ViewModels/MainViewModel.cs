@@ -58,6 +58,13 @@ namespace Jolt.NET.UI.ViewModels
             get { return Core.Settings.Instance.CurrentUser; }
         }
 
+        private SessionStatus _status;
+        public SessionStatus Status
+        {
+            get { return _status; }
+            set { Set(() => Status, ref _status, value); }
+        }
+
         private DateTime _lastPinged;
         public DateTime LastPinged
         {
@@ -119,6 +126,7 @@ namespace Jolt.NET.UI.ViewModels
             FetchDataStorageCommand = new AutoRelayCommand(FetchDataStorage, CanFetchDataStorage);
             FetchDataStorageCommand.DependsOn(() => User);
             FetchDataCommand = new RelayCommand<DataStorageKey>(FetchData);
+            SetSessionStatusCommand = new RelayCommand(SetSessionStatus);
         }
 
         private void OnPingSessionCompleted(object sender, ResponseEventArgs e)
@@ -239,6 +247,12 @@ namespace Jolt.NET.UI.ViewModels
         {
             return trophy != null
                 && trophy.Achieved.Equals("false", StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        public RelayCommand SetSessionStatusCommand { get; set; }
+        private void SetSessionStatus()
+        {
+            session.AutoPing(30, Status);
         }
 
         public override void Cleanup()
