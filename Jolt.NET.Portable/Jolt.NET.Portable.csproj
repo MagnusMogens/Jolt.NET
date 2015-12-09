@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CCA2473-0F72-4EC5-A09A-7AEA217C13EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jolt.NET.Portable</RootNamespace>
+    <AssemblyName>Jolt.NET.Portable</AssemblyName>
+    <DefaultLanguage>de-DE</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Jolt.NET.cd" />
+    <None Include="project.json" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Notifieable.cs" />
+    <Compile Include="Core\Settings.cs" />
+    <Compile Include="DataStorageClient.cs" />
+    <Compile Include="Data\DataStorage\BaseDataStoreEntry.cs" />
+    <Compile Include="Data\DataStorage\DataStorageResponses.cs" />
+    <Compile Include="Data\DataStorage\DataStorageUpdateOperation.cs" />
+    <Compile Include="Data\DataStorage\StringDataStoreEntry.cs" />
+    <Compile Include="Data\Score.cs" />
+    <Compile Include="Data\ScoreTable.cs" />
+    <Compile Include="Data\SessionStatus.cs" />
+    <Compile Include="Data\SuccessResponse.cs" />
+    <Compile Include="Data\Trophy.cs" />
+    <Compile Include="Data\TrophyDifficulty.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Data\UserStatus.cs" />
+    <Compile Include="Data\UserType.cs" />
+    <Compile Include="Exceptions\UserNotAuthenticatedException.cs" />
+    <Compile Include="GameClient.cs" />
+    <Compile Include="Helper\EnumUtils.cs" />
+    <Compile Include="Helper\StringUtils.cs" />
+    <Compile Include="Interfaces\IDataStoreEntry.cs" />
+    <Compile Include="Network\NetworkClient.cs" />
+    <Compile Include="Network\RequestAction.cs" />
+    <Compile Include="Network\RequestParameter.cs" />
+    <Compile Include="Network\RequestType.cs" />
+    <Compile Include="Network\ResponseEventArgs.cs" />
+    <Compile Include="Network\ReturnFormat.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoreClient.cs" />
+    <Compile Include="SessionManager.cs" />
+    <Compile Include="TrophyClient.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

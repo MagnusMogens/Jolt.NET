@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.fontawesome.io/icons/">
+
+    <ControlTemplate TargetType="{x:Type Button}" x:Key="JoltButtonCT">
+        <Border Background="{TemplateBinding Background}">
+            <Grid>
+                <fa:FontAwesome Icon="ChevronRight" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"
+                                                Foreground="#CCFF00" FontSize="20" FontWeight="Normal"/>
+                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0" />
+            </Grid>
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#2F7F6F" />
+                <Setter Property="Foreground" Value="#CCFF00" />
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#555555" />
+                <Setter Property="Foreground" Value="#FFFFFF" />
+            </Trigger>
+
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="#AAAAAA" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type Button}" x:Key="JoltButton">
+        <Setter Property="Background" Value="#555555" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FontFamily" Value="./fonts/#Lato-Bold" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Template" Value="{StaticResource JoltButtonCT}" />
+    </Style>
+
+</ResourceDictionary>

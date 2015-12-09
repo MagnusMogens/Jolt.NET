@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Jolt.NET.Exceptions.UserNotAuthenticatedException">
+    <Position X="3" Y="8.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\UserNotAuthenticatedException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Helper.StringUtils">
+    <Position X="9" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helper\StringUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Base.Notifieable" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\Notifieable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Jolt.NET.Data.ScoreTable">
+    <Position X="15.5" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAACIAAAAAAgAAAEAABAAAQAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Data\ScoreTable.cs</FileName>
+      <NewMemberFileName>Data\Score.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.Trophy">
+    <Position X="13.75" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACQAAIAIAgAUAEAABAAAAAAAAAAAAAAAAwAAQAAAA=</HashCode>
+      <FileName>Data\Trophy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.TrophyResponse">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Data\Trophy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.User">
+    <Position X="17.25" Y="1.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEACAAAEAAAACgRogQBAAAAgAQAAAIAAFQIABoABQiA=</HashCode>
+      <FileName>Data\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.ScoreTableResponse">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\ScoreTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.GameClient">
+    <Position X="3" Y="10.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABCAAAMAAAAAgAAAAAAAAAAAAAAAAAAAQAAAAAQAA=</HashCode>
+      <FileName>GameClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.SessionManager">
+    <Position X="0.5" Y="10.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAIAAABAAAAAAAABAAACgAAAAAA=</HashCode>
+      <FileName>SessionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.TrophyClient">
+    <Position X="5.5" Y="10.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAAAAggACAAAAAAFAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TrophyClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Helper.EnumUtils">
+    <Position X="9" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helper\EnumUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.SuccessResponse">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAEAEAIAAAAAA=</HashCode>
+      <FileName>Data\SuccessResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.ScoreClient">
+    <Position X="8.25" Y="10.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABgAAQAEAAAgBAAAAAAAABAA=</HashCode>
+      <FileName>ScoreClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.UserResponse">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Core.Settings">
+    <Position X="5.75" Y="6.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAIEAAgAgAEMAAAAgAAAAAoAgUCAAAAAAQAA=</HashCode>
+      <FileName>Core\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Network.NetworkClient">
+    <Position X="0.5" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAABAAAAgAACAAgAAAAAQAAAAAAAQAA=</HashCode>
+      <FileName>Network\NetworkClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Network.ResponseEventArgs">
+    <Position X="3" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Network\ResponseEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.Score">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAgAAAQEQAChAAAAAAAAIIAIAAQAEAAg=</HashCode>
+      <FileName>Data\Score.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.ScoreResponse">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="Jolt.NET.Data.SuccessResponse" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="3.434" />
+        <Point X="3.25" Y="3.7" />
+        <Point X="7" Y="3.7" />
+        <Point X="7" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Score.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.DataStorage.BaseDataStoreEntry">
+    <Position X="21.25" Y="1.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAABAABAAAAAAAQAAACAACAAAAAAAJAAAAAAAACAAAA=</HashCode>
+      <FileName>Data\DataStorage\BaseDataStoreEntry.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Jolt.NET.Data.DataStorage.GetKeysResponse">
+    <Position X="10" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataStorage\DataStorageResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.DataStorage.UpdateDataStorageResponse">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataStorage\DataStorageResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.DataStorage.DataStorageKey">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataStorage\DataStorageResponses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jolt.NET.Data.DataStorage.StringDataStoreEntry">
+    <Position X="21.25" Y="5.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gABAAAABBAAAAACAAAAAAAAAAAAAABAIAAAAAAQAAAA=</HashCode>
+      <FileName>Data\DataStorage\StringDataStoreEntry.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Jolt.NET.DataStorageClient">
+    <Position X="10.75" Y="10.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStorageClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Jolt.NET.Interfaces.IDataStoreEntry">
+    <Position X="24" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAABAABAAAAAAAQAAAAAACAAAAAAABAAAAAAAACAAAA=</HashCode>
+      <FileName>Interfaces\IDataStoreEntry.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Jolt.NET.Interfaces.IGenericDataStoreEntry&lt;T&gt;">
+    <Position X="24" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gABAAAAAAAAAAACAAAAAAAAAAAAAABAIAAAAAAQAAAA=</HashCode>
+      <FileName>Interfaces\IDataStoreEntry.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Jolt.NET.Data.SessionStatus">
+    <Position X="17" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Data\SessionStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Jolt.NET.Data.TrophyDifficulty">
+    <Position X="17" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgIAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAABE=</HashCode>
+      <FileName>Data\TrophyDifficulty.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Jolt.NET.Data.UserStatus">
+    <Position X="17" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAABA=</HashCode>
+      <FileName>Data\UserStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Jolt.NET.Data.UserType">
+    <Position X="17" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Data\UserType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Jolt.NET.Network.RequestAction">
+    <Position X="15.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACYIAAABAAAAJAAAAEAARAAAAAAAAAAAAAAAABCAAAA=</HashCode>
+      <FileName>Network\RequestAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Jolt.NET.Network.RequestParameter">
+    <Position X="13.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACMAAAAAAwAAQEQAQwAAAAAABAAIAEgAAAAABg=</HashCode>
+      <FileName>Network\RequestParameter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Jolt.NET.Network.RequestType">
+    <Position X="15.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAgAACAAAQAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Network\RequestType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Jolt.NET.Network.ReturnFormat">
+    <Position X="13.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAAAAAAAhA=</HashCode>
+      <FileName>Network\ReturnFormat.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Jolt.NET.Data.DataStorage.DataStorageUpdateOperation">
+    <Position X="15.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAQAgAAAAAAADAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataStorage\DataStorageUpdateOperation.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
