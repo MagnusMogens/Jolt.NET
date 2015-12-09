@@ -17,6 +17,7 @@ namespace Jolt.NET.UI.ViewModels
         TrophyClient trophies;
         DataStorageClient storage;
         SessionManager session;
+        ScoreClient scores;
 
         private string _gameId;
         public string GameId
@@ -93,6 +94,45 @@ namespace Jolt.NET.UI.ViewModels
             set { Set(() => DataStorage, ref _dataStorage, value); }
         }
 
+        private string _newDataStorageKey;
+        public string NewDataStorageKey
+        {
+            get { return _newDataStorageKey; }
+            set { Set(() => NewDataStorageKey, ref _newDataStorageKey, value, true); }
+        }
+
+        private string _newDataStorageData;
+        public string NewDataStorageData
+        {
+            get { return _newDataStorageData; }
+            set { Set(() => NewDataStorageData, ref _newDataStorageData, value, true); }
+        }
+
+        private ObservableCollection<ScoreTable> _scoreTables;
+        public ObservableCollection<ScoreTable> ScoreTables
+        {
+            get { return _scoreTables; }
+            set { Set(() => ScoreTables, ref _scoreTables, value); }
+        }
+
+        private ScoreTable _selectedScoreTable;
+        public ScoreTable SelectedScoreTable
+        {
+            get { return _selectedScoreTable; }
+            set
+            {
+                Set(() => SelectedScoreTable, ref _selectedScoreTable, value, true);
+                FetchScoresCommand.Execute(null);
+            }
+        }
+
+        private ObservableCollection<Score> _scoreData;
+        public ObservableCollection<Score> ScoreData
+        {
+            get { return _scoreData; }
+            set { Set(() => ScoreData, ref _scoreData, value); }
+        }
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -106,6 +146,7 @@ namespace Jolt.NET.UI.ViewModels
 
             trophies = new TrophyClient();
             storage = new DataStorageClient();
+            scores = new ScoreClient();
 
             GameId = Properties.Settings.Default.GameId;
             GameKey = Properties.Settings.Default.GameKey;
@@ -126,7 +167,14 @@ namespace Jolt.NET.UI.ViewModels
             FetchDataStorageCommand = new AutoRelayCommand(FetchDataStorage, CanFetchDataStorage);
             FetchDataStorageCommand.DependsOn(() => User);
             FetchDataCommand = new RelayCommand<DataStorageKey>(FetchData);
+            AddNewDataStorageCommand = new AutoRelayCommand(AddNewDataStorage, CanAddNewDataStorage);
+            AddNewDataStorageCommand.DependsOn(() => NewDataStorageKey);
+            AddNewDataStorageCommand.DependsOn(() => NewDataStorageData);
             SetSessionStatusCommand = new RelayCommand(SetSessionStatus);
+            FetchScoreTablesCommand = new AutoRelayCommand(FetchScoreTables, CanFetchScoreTables);
+            FetchScoreTablesCommand.DependsOn(() => User);
+            FetchScoresCommand = new AutoRelayCommand(FetchScores, CanFetchScores);
+            FetchScoresCommand.DependsOn(() => SelectedScoreTable);
         }
 
         private void OnPingSessionCompleted(object sender, ResponseEventArgs e)
@@ -228,11 +276,44 @@ namespace Jolt.NET.UI.ViewModels
             data.Key = key.Key;
             await data.FetchDataStorageEntry();
             
-            for(int i = 0; i < DataStorage.Count -1; i++)
+            for(int i = 0; i < DataStorage.Count; i++)
             {
                 if (DataStorage[i].Key == key)
                     DataStorage[i] = new KeyValuePair<DataStorageKey, string>(key, data.Data);
             }
+        }
+
+        public AutoRelayCommand AddNewDataStorageCommand { get; set; }
+        private async void AddNewDataStorage()
+        {
+            var dataStorageEntry = new StringDataStoreEntry();
+            dataStorageEntry.Key = NewDataStorageKey;
+            await dataStorageEntry.SetDataStorageEntry(NewDataStorageData);
+
+            bool dataSet = false;
+            var entry = new KeyValuePair<DataStorageKey, string>(
+                new DataStorageKey() { Key = NewDataStorageKey },
+                NewDataStorageData);
+
+            for (int i = 0; i < DataStorage.Count; i++)
+            {
+                if (DataStorage[i].Key.Key == entry.Key.Key)
+                {
+                    DataStorage[i] = entry;
+                    dataSet = true;
+                }
+            }
+
+            if (!dataSet)
+                DataStorage.Add(entry);
+
+            NewDataStorageKey = "";
+            NewDataStorageData = "";
+        }
+        private bool CanAddNewDataStorage()
+        {
+            return !string.IsNullOrEmpty(NewDataStorageKey)
+                && !string.IsNullOrEmpty(NewDataStorageData);
         }
 
         public RelayCommand<Trophy> AchieveTrophyCommand { get; set; }
@@ -254,6 +335,38 @@ namespace Jolt.NET.UI.ViewModels
         {
             session.AutoPing(30, Status);
         }
+
+        public AutoRelayCommand FetchScoreTablesCommand { get; set; }
+        private async void FetchScoreTables()
+        {
+            ScoreTables = new ObservableCollection<ScoreTable>();
+            var tables = await scores.FetchScoreTables();
+            foreach (var item in tables)
+            {
+                ScoreTables.Add(item);
+            }
+        }
+        private bool CanFetchScoreTables()
+        {
+            return User != null
+                && User.IsAuthenticated;
+        }
+
+        public AutoRelayCommand FetchScoresCommand { get; set; }
+        private async void FetchScores()
+        {
+            ScoreData = new ObservableCollection<Score>();
+            var scoreList = await scores.FetchScores(new List<int> { SelectedScoreTable.Id });
+            foreach (var item in scoreList.OrderBy(x => x.Sort))
+            {
+                ScoreData.Add(item);
+            }
+        }
+        private bool CanFetchScores()
+        {
+            return SelectedScoreTable != null;
+        }
+
 
         public override void Cleanup()
         {

@@ -53,7 +53,6 @@ namespace Jolt.NET.Data.DataStorage
             request.Credentials = CredentialCache.DefaultCredentials;
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
-            request.Headers["Content-Length"] = byteData.Length.ToString();
             using (var dataStream = await request.GetRequestStreamAsync())
             {
                 dataStream.Write(byteData, 0, byteData.Length);
@@ -94,7 +93,6 @@ namespace Jolt.NET.Data.DataStorage
             request.Credentials = CredentialCache.DefaultCredentials;
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
-            request.Headers["Content-Length"] = byteData.Length.ToString();
             using (var dataStream = await request.GetRequestStreamAsync())
             {
                 dataStream.Write(byteData, 0, byteData.Length);

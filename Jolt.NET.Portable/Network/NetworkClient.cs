@@ -6,8 +6,8 @@ using System.Xml.Serialization;
 using Jolt.NET.Data;
 using Jolt.NET.Helper;
 using Jolt.NET.Core;
-using System.Net.Http;
 using PCLCrypto;
+using System.IO;
 
 namespace Jolt.NET.Network
 {
@@ -51,7 +51,7 @@ namespace Jolt.NET.Network
 
             return sb.ToString();
         }
-
+        
         /// <summary>
         /// Creates a valid GameJoltAPI web request.
         /// </summary>
@@ -83,8 +83,6 @@ namespace Jolt.NET.Network
                                                  (usedFormat.GetDescription() + param));
             url += SignatureKey + GetRequestSignature(url);
 
-            var client = new HttpClient();
-
             // Create and configure request.
             var request = WebRequest.Create(url);
             request.Method = "GET";
@@ -94,8 +92,13 @@ namespace Jolt.NET.Network
         
         public static T EndWebRequest<T>(WebResponse response)
         {
+            return DeserializeResponseStream<T>(response.GetResponseStream());
+        }
+
+        public static T DeserializeResponseStream<T>(Stream data)
+        {
             var serializer = new XmlSerializer(typeof(T));
-            return (T)serializer.Deserialize(response.GetResponseStream());
+            return (T)serializer.Deserialize(data);
         }
 
         #endregion

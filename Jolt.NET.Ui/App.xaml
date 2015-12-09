@@ -12,6 +12,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Jolt.NET.UI;component/Resources/JoltButton.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Jolt.NET.UI;component/Resources/JoltCombobox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Jolt.NET.UI;component/Resources/JoltListBox.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Jolt.NET.UI;component/Resources/JoltTabControl.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Jolt.NET.UI;component/Resources/JoltTextBox.xaml" />
             </ResourceDictionary.MergedDictionaries>

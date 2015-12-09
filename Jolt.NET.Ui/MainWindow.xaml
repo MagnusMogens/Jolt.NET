@@ -8,7 +8,9 @@
         Height="600" Width="800"
         MinHeight="400" MinWidth="600"
         DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
-        FontFamily="./fonts/#Lato" Icon="Resources/Jolt.ico">
+        FontFamily="./fonts/#Lato" Icon="Resources/Jolt.ico"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform">
     <Window.Resources>
         <ObjectDataProvider x:Key="SessionStatus" MethodName="GetValues"
                             ObjectType="{x:Type System:Enum}">
@@ -106,37 +108,19 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <ListBox FontSize="14" HorizontalContentAlignment="Stretch">
-                            <ListBox.ItemContainerStyle>
-                                <Style TargetType="ListBoxItem">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="ListBoxItem">
-                                                <StackPanel>
-                                                    <Separator x:Name="Separator"/>
-                                                    <ContentPresenter/>
-                                                </StackPanel>
-                                                <ControlTemplate.Triggers>
-                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource PreviousData}}" Value="{x:Null}">
-                                                        <Setter Property="Visibility" TargetName="Separator" Value="Collapsed"/>
-                                                    </DataTrigger>
-                                                </ControlTemplate.Triggers>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </ListBox.ItemContainerStyle>
-                            <DockPanel>
-                                <Label DockPanel.Dock="Right" Content="{Binding User.DeveloperName}" />
-                                <Label>Developer Name:</Label>
+                        <ListBox FontSize="14" HorizontalContentAlignment="Stretch"
+                                 Style="{StaticResource JoltListBox}">
+                            <DockPanel LastChildFill="False">
+                                <Label Foreground="White" Content="Developer Name:" DockPanel.Dock="Left"/>
+                                <Label Foreground="White" Content="{Binding User.DeveloperName}" DockPanel.Dock="Right" />
                             </DockPanel>
-                            <DockPanel>
-                                <Label DockPanel.Dock="Right" Content="{Binding User.DeveloperWebsite}" />
-                                <Label>Developer Website:</Label>
+                            <DockPanel LastChildFill="False">
+                                <Label Foreground="White" Content="Developer Website:" DockPanel.Dock="Left"/>
+                                <Label Foreground="White" Content="{Binding User.DeveloperWebsite}" DockPanel.Dock="Right" />
                             </DockPanel>
-                            <DockPanel>
-                                <Label DockPanel.Dock="Right" Content="{Binding User.DeveloperDescription}" />
-                                <Label>Developer Description:</Label>
+                            <DockPanel LastChildFill="False">
+                                <Label Foreground="White" Content="Developer Description:" DockPanel.Dock="Left"/>
+                                <Label Foreground="White" Content="{Binding User.DeveloperDescription}" DockPanel.Dock="Right" />
                             </DockPanel>
                         </ListBox>
 
@@ -157,26 +141,8 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <ListBox HorizontalContentAlignment="Stretch" ItemsSource="{Binding Trophies}">
-                        <ListBox.ItemContainerStyle>
-                            <Style TargetType="ListBoxItem">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="ListBoxItem">
-                                            <StackPanel>
-                                                <Separator x:Name="Separator"/>
-                                                <ContentPresenter/>
-                                            </StackPanel>
-                                            <ControlTemplate.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource PreviousData}}" Value="{x:Null}">
-                                                    <Setter Property="Visibility" TargetName="Separator" Value="Collapsed"/>
-                                                </DataTrigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </ListBox.ItemContainerStyle>
+                    <ListBox HorizontalContentAlignment="Stretch" ItemsSource="{Binding Trophies}"
+                             Style="{StaticResource JoltListBox}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -191,8 +157,8 @@
 
                                     <DockPanel Margin="10" Grid.Column="1" LastChildFill="False">
                                         <StackPanel DockPanel.Dock="Top">
-                                            <Label Content="{Binding Title}" FontSize="20" Padding="0" />
-                                            <Label Content="{Binding Description}" FontSize="12" Padding="0" />
+                                            <Label Foreground="White" Content="{Binding Title}" FontSize="20" Padding="0" />
+                                            <Label Foreground="White" Content="{Binding Description}" FontSize="12" Padding="0" />
                                         </StackPanel>
                                         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                                             <Button Height="34" Width="150" Content="ACHIEVE TROPHY" Margin="3" Style="{StaticResource JoltButton}" 
@@ -224,37 +190,20 @@
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
                     <ListBox HorizontalContentAlignment="Stretch" 
                              ItemsSource="{Binding DataStorage}"
-                             SelectedValuePath="Value">
-                        <ListBox.ItemContainerStyle>
-                            <Style TargetType="ListBoxItem">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="ListBoxItem">
-                                            <StackPanel>
-                                                <Separator x:Name="Separator"/>
-                                                <ContentPresenter/>
-                                            </StackPanel>
-                                            <ControlTemplate.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource PreviousData}}" Value="{x:Null}">
-                                                    <Setter Property="Visibility" TargetName="Separator" Value="Collapsed"/>
-                                                </DataTrigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </ListBox.ItemContainerStyle>
+                             SelectedValuePath="Value"
+                             Style="{StaticResource JoltListBox}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <DockPanel Margin="10" Grid.Column="1" LastChildFill="False">
                                         <StackPanel DockPanel.Dock="Top">
-                                            <Label Content="{Binding Key.Key, Mode=OneWay}" FontSize="20" Padding="0" />
-                                            <Label Content="{Binding Value}" FontSize="12" Padding="0" />
+                                            <Label Foreground="White" Content="{Binding Key.Key, Mode=OneWay}" FontSize="20" Padding="0" />
+                                            <Label Foreground="White" Content="{Binding Value}" FontSize="12" Padding="0" />
                                         </StackPanel>
                                         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                                             <Button Height="34" Width="150" Content="FETCH DATA" Margin="3" Style="{StaticResource JoltButton}" 
@@ -266,13 +215,64 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="1" FlowDirection="RightToLeft" >
+                    <StackPanel Grid.Row="1">
+                        <Label FontSize="20">Add new Entry:</Label>
+                        <TextBox HorizontalAlignment="Stretch" Height="34" Margin="3" 
+                                 FontSize="16" Style="{StaticResource JoltTextBox}" Text="{Binding NewDataStorageKey}">
+                            <wm:WatermarkService.Watermark>
+                                <Label Padding="10 5" FontSize="16" FontFamily="./fonts/#Lato">Key</Label>
+                            </wm:WatermarkService.Watermark>
+                        </TextBox>
+                        <TextBox HorizontalAlignment="Stretch" Height="34" Margin="3" 
+                                 FontSize="16" Style="{StaticResource JoltTextBox}" Text="{Binding NewDataStorageData}">
+                            <wm:WatermarkService.Watermark>
+                                <Label Padding="10 5" FontSize="16" FontFamily="./fonts/#Lato">Data</Label>
+                            </wm:WatermarkService.Watermark>
+                        </TextBox>
+                        <Button Height="34" Width="200" HorizontalAlignment="Left"
+                                Content="ADD" Margin="3" Style="{StaticResource JoltButton}" 
+                                Command="{Binding AddNewDataStorageCommand, IsAsync=True}"/>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" FlowDirection="RightToLeft" >
                         <Button Height="34" Width="200" Content="LOAD DATA STORAGE" Margin="3" Style="{StaticResource JoltButton}" Command="{Binding FetchDataStorageCommand, IsAsync=True}"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem Header="SCORES" Style="{StaticResource JoltTabItem}">
-                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <ListBox Grid.Column="0"
+                             HorizontalContentAlignment="Stretch" 
+                             ItemsSource="{Binding ScoreTables}"
+                             SelectedItem="{Binding SelectedScoreTable}"
+                             Style="{StaticResource JoltListBox}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <DockPanel>
+                                    <Label Foreground="White" Content="{Binding Id}" DockPanel.Dock="Left" />
+                                    <Label Foreground="White" Content="{Binding Name}" DockPanel.Dock="Left" />
+                                    <Label Foreground="White" Content="{Binding Primary}" DockPanel.Dock="Right" />
+                                    <Label Foreground="White" Content="{Binding Description}" />
+                                </DockPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <DataGrid Grid.Column="1" ItemsSource="{Binding ScoreData}" IsReadOnly="True" />
+
+                    <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Grid.Row="1" Grid.ColumnSpan="2">
+                        <Button Height="34" Width="150" Content="LOAD SCORES" Margin="3" Style="{StaticResource JoltButton}" Command="{Binding FetchScoreTablesCommand, IsAsync=True}"/>
+                    </StackPanel>
+                </Grid>
             </TabItem>
         </TabControl>
     </DockPanel>
