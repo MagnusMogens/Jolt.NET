@@ -248,6 +248,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
                     <ListBox Grid.Column="0"
@@ -269,7 +270,46 @@
 
                     <DataGrid Grid.Column="1" ItemsSource="{Binding ScoreData}" IsReadOnly="True" />
 
-                    <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox HorizontalAlignment="Stretch" Height="34" Margin="3" Grid.Column="0" Grid.Row="0"
+                                 FontSize="16" Style="{StaticResource JoltTextBox}" Text="{Binding NewScoreSort}">
+                                <wm:WatermarkService.Watermark>
+                                    <Label Padding="10 5" FontSize="16" FontFamily="./fonts/#Lato">Sort</Label>
+                                </wm:WatermarkService.Watermark>
+                            </TextBox>
+                        <TextBox HorizontalAlignment="Stretch" Height="34" Margin="3" Grid.Column="1" Grid.Row="0"
+                                 FontSize="16" Style="{StaticResource JoltTextBox}" Text="{Binding NewScore}">
+                            <wm:WatermarkService.Watermark>
+                                <Label Padding="10 5" FontSize="16" FontFamily="./fonts/#Lato">Score</Label>
+                            </wm:WatermarkService.Watermark>
+                        </TextBox>
+
+                        <ComboBox HorizontalAlignment="Stretch" Margin="3" Grid.Column="0" Grid.Row="1" Style="{StaticResource JoltCombobox}" 
+                                  ItemsSource="{Binding ScoreTables}" DisplayMemberPath="Name"
+                                  SelectedItem="{Binding NewScoreSelectedTable}" />
+                        <TextBox HorizontalAlignment="Stretch" Height="34" Margin="3" Grid.Column="1" Grid.Row="1"
+                                 FontSize="16" Style="{StaticResource JoltTextBox}" Text="{Binding NewScoreExtraData}">
+                            <wm:WatermarkService.Watermark>
+                                <Label Padding="10 5" FontSize="16" FontFamily="./fonts/#Lato">ExtraData</Label>
+                            </wm:WatermarkService.Watermark>
+                        </TextBox>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
+                            <Button Height="34" Width="150" Content="ADD NEW SCORE" Margin="3" Style="{StaticResource JoltButton}" Command="{Binding AddNewScoreCommand, IsAsync=True}"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Grid.Row="2" Grid.ColumnSpan="2">
                         <Button Height="34" Width="150" Content="LOAD SCORES" Margin="3" Style="{StaticResource JoltButton}" Command="{Binding FetchScoreTablesCommand, IsAsync=True}"/>
                     </StackPanel>
                 </Grid>

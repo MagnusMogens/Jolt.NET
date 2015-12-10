@@ -133,6 +133,35 @@ namespace Jolt.NET.UI.ViewModels
             set { Set(() => ScoreData, ref _scoreData, value); }
         }
 
+        private string _newScore;
+        public string NewScore
+        {
+            get { return _newScore; }
+            set { Set(() => NewScore, ref _newScore, value, true); }
+        }
+
+        private int _newScoreSort;
+        public int NewScoreSort
+        {
+            get { return _newScoreSort; }
+            set { Set(() => NewScoreSort, ref _newScoreSort, value, true); }
+        }
+
+        private string _newScoreExtraData;
+        public string NewScoreExtraData
+        {
+            get { return _newScoreExtraData; }
+            set { Set(() => NewScoreExtraData, ref _newScoreExtraData, value, true); }
+        }
+
+        private ScoreTable _newScoreSelectedTable;
+        public ScoreTable NewScoreSelectedTable
+        {
+            get { return _newScoreSelectedTable; }
+            set { Set(() => NewScoreSelectedTable, ref _newScoreSelectedTable, value, true); }
+        }
+
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -175,6 +204,9 @@ namespace Jolt.NET.UI.ViewModels
             FetchScoreTablesCommand.DependsOn(() => User);
             FetchScoresCommand = new AutoRelayCommand(FetchScores, CanFetchScores);
             FetchScoresCommand.DependsOn(() => SelectedScoreTable);
+            AddNewScoreCommand = new AutoRelayCommand(AddNewScore, CanAddNewScore);
+            AddNewScoreCommand.DependsOn(() => NewScore);
+            AddNewScoreCommand.DependsOn(() => NewScoreSelectedTable);
         }
 
         private void OnPingSessionCompleted(object sender, ResponseEventArgs e)
@@ -367,6 +399,19 @@ namespace Jolt.NET.UI.ViewModels
             return SelectedScoreTable != null;
         }
 
+        public AutoRelayCommand AddNewScoreCommand { get; set; }
+        private async void AddNewScore()
+        {
+            var internTable = NewScoreSelectedTable;
+            await scores.AddScore(NewScore, NewScoreSort, NewScoreSelectedTable.Id, null, NewScoreExtraData);
+            FetchScoreTablesCommand.Execute(null);
+            SelectedScoreTable = internTable;
+        }
+        private bool CanAddNewScore()
+        {
+            return NewScoreSelectedTable != null
+                && !string.IsNullOrEmpty(NewScore);
+        }
 
         public override void Cleanup()
         {
