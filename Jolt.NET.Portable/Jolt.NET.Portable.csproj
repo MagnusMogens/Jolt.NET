@@ -70,6 +70,7 @@
     <Compile Include="Helper\StringUtils.cs" />
     <Compile Include="Interfaces\IDataStoreEntry.cs" />
     <Compile Include="Network\NetworkClient.cs" />
+    <Compile Include="Network\NetworkEventArgs.cs" />
     <Compile Include="Network\RequestAction.cs" />
     <Compile Include="Network\RequestParameter.cs" />
     <Compile Include="Network\RequestType.cs" />

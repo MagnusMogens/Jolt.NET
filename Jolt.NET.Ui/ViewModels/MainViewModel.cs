@@ -19,6 +19,19 @@ namespace Jolt.NET.UI.ViewModels
         SessionManager session;
         ScoreClient scores;
 
+        private ObservableCollection<string> _requestUrls;
+        public ObservableCollection<string> RequestUrls
+        {
+            get { return _requestUrls; }
+            set { Set(() => RequestUrls, ref _requestUrls, value); }
+        }
+        private int _requestUrlsLastIndex;
+        public int RequestUrlsLastIndex
+        {
+            get { return _requestUrlsLastIndex; }
+            set { Set(() => RequestUrlsLastIndex, ref _requestUrlsLastIndex, value); }
+        }
+
         private string _gameId;
         public string GameId
         {
@@ -167,6 +180,10 @@ namespace Jolt.NET.UI.ViewModels
         /// </summary>
         public MainViewModel()
         {
+            RequestUrls = new ObservableCollection<string>();
+            System.Windows.Data.BindingOperations.EnableCollectionSynchronization(RequestUrls, new object());
+            NetworkClient.NewUrlCreated += OnNewUrlCreated;
+
             client = new GameClient();
             client.AuthenticationCompleted += OnAuthenticationCompleted;
 
@@ -207,6 +224,12 @@ namespace Jolt.NET.UI.ViewModels
             AddNewScoreCommand = new AutoRelayCommand(AddNewScore, CanAddNewScore);
             AddNewScoreCommand.DependsOn(() => NewScore);
             AddNewScoreCommand.DependsOn(() => NewScoreSelectedTable);
+        }
+
+        private void OnNewUrlCreated(object sender, NetworkEventArgs e)
+        {
+            RequestUrls.Add(string.Format("[{0}] {1}", e.CreatedAt.ToString("HH:mm:ss"), e.Url));
+            RequestUrlsLastIndex++;
         }
 
         private void OnPingSessionCompleted(object sender, ResponseEventArgs e)

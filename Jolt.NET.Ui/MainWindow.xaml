@@ -20,6 +20,9 @@
         </ObjectDataProvider>
     </Window.Resources>
     <DockPanel Background="#3E3E3E">
+        <ComboBox DockPanel.Dock="Top" HorizontalAlignment="Stretch" Margin="3" Style="{StaticResource JoltCombobox}" 
+                    ItemsSource="{Binding RequestUrls}" IsEditable="True" IsReadOnly="True"
+                    SelectedIndex="{Binding RequestUrlsLastIndex}"/>
         <Image Height="54" 
                Source="Resources/Jolt.NET.Logo.png" 
                StretchDirection="DownOnly" HorizontalAlignment="Left"

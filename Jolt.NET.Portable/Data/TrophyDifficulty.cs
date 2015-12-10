@@ -7,7 +7,7 @@ namespace Jolt.NET.Data
         /// <summary>
         /// An unknown trophy difficulty was delivered.
         /// </summary>
-        [XmlEnum("")]
+        [XmlEnum("N/A")]
         Unknown,
         [XmlEnum("Bronze")]
         Bronze,

@@ -127,6 +127,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\CollectionExtensions.cs" />
     <Compile Include="Converter\EnumConverter.cs" />
     <Compile Include="Converter\ToUpperCaseConverter.cs" />
     <Compile Include="Converter\ValueConverterGroup.cs" />

@@ -8,6 +8,7 @@ using Jolt.NET.Helper;
 using Jolt.NET.Core;
 using PCLCrypto;
 using System.IO;
+using System;
 
 namespace Jolt.NET.Network
 {
@@ -36,8 +37,14 @@ namespace Jolt.NET.Network
 
         #endregion
 
+        #region Events
+
+        public static event EventHandler<NetworkEventArgs> NewUrlCreated;
+
+        #endregion
+
         #region Methods
-        
+
         public static string GetRequestSignature(string requestUrl)
         {
             var bytes = Encoding.ASCII.GetBytes(requestUrl + Settings.Instance.GameKey);
@@ -85,6 +92,8 @@ namespace Jolt.NET.Network
 
             // Create and configure request.
             var request = WebRequest.Create(url);
+            NewUrlCreated?.Invoke(null, new NetworkEventArgs(url));
+
             request.Method = "GET";
 
             return request;

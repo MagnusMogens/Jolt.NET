@@ -134,7 +134,7 @@
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Visibility="Hidden" Background="Transparent"
                                  HorizontalAlignment="Left" VerticalAlignment="Center"
-                                 Focusable="True" >
+                                 Focusable="True" Foreground="White">
                             <TextBox.Template>
                                 <ControlTemplate TargetType="TextBox" >
                                     <Border Name="PART_ContentHost" Focusable="False" />

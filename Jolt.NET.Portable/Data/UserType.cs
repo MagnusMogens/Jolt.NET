@@ -4,7 +4,7 @@ namespace Jolt.NET.Data
 {
     public enum UserType
     {
-        [XmlEnum("")]
+        [XmlEnum("N/A")]
         Unknown,
         [XmlEnum("User")]
         User,

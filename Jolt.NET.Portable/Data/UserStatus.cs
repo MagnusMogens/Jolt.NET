@@ -4,7 +4,7 @@ namespace Jolt.NET.Data
 {
     public enum UserStatus
     {
-        [XmlEnum("")]
+        [XmlEnum("N/A")]
         Unknown,
         [XmlEnum("Active")]
         Active,
