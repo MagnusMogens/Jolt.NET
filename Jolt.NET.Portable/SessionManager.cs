@@ -16,6 +16,7 @@ namespace Jolt.NET
 
         private Timer timer { get; set; }
         public Dictionary<User, SessionStatus> UserStatus { get; set; }
+        private List<User> AutoPingedUser { get; set; }
 
         #endregion
 
@@ -30,6 +31,7 @@ namespace Jolt.NET
         public SessionManager()
         {
             UserStatus = new Dictionary<User, SessionStatus>();
+            AutoPingedUser = new List<User>();
         }
         
         public async Task<SuccessResponse> OpenSession(User user = null)
@@ -81,6 +83,14 @@ namespace Jolt.NET
                 await PingSession(item.Value, item.Key);
             }
         }
+
+        private async Task AutoPingSessions()
+        {
+            foreach (var item in AutoPingedUser)
+            {
+                await PingSession(UserStatus[item], item);
+            }
+        }
         
         public SessionStatus GetSessionStatus(User user = null)
         {
@@ -95,6 +105,7 @@ namespace Jolt.NET
         {
             var u = user ?? Settings.Instance.CurrentUser;
             if (UserStatus.ContainsKey(u)) UserStatus.Remove(u);
+            await StopAutoPingUser(u);
 
             var request = NetworkClient.CreateWebRequest(RequestType.Sessions,
                                                          new Dictionary<RequestParameter, string>
@@ -112,16 +123,38 @@ namespace Jolt.NET
             }
         }
 
-        public async Task AutoPing(int seconds = 30, SessionStatus status = SessionStatus.Active, User user = null)
+        public async Task AutoPingUser(int period = 30, SessionStatus status = SessionStatus.Active, User user = null)
         {
-            var milliSeconds = seconds * 1000;
+            var milliSeconds = period * 1000;
             var u = user ?? Settings.Instance.CurrentUser;
+            if (!AutoPingedUser.Contains(u)) AutoPingedUser.Add(u);
             UserStatus[u] = status;
 
             if (timer == null)
                 InitializeTimer(milliSeconds);
             else
                 await ChangeTimer(milliSeconds);
+        }
+
+        public async Task StopAutoPingUser(User user = null)
+        {
+            if (AutoPingedUser.Contains(user))
+            {
+                AutoPingedUser.Remove(user);
+            }
+            if (!AutoPingedUser.Any())
+                await StopAutoPing();
+        }
+
+        public void StartAutoPing(int period)
+        {
+            if (timer == null)
+                InitializeTimer(30 * 1000);
+        }
+
+        public async Task StopAutoPing()
+        {
+            await ChangeTimer(0);
         }
 
         private void InitializeTimer(int milliSeconds)
@@ -135,32 +168,14 @@ namespace Jolt.NET
                 timer.Dispose();
             else
             {
-                await PingSessions();
+                await AutoPingSessions();
                 timer.Change(milliSeconds, milliSeconds);
             }
-        }
-
-        public async Task EndAutoPing(User user = null)
-        {
-            if (UserStatus.ContainsKey(user))
-            {
-                UserStatus.Remove(user);
-            }
-            if (!UserStatus.Any())
-                await AutoPing(0);
-        }
-
-        public async Task EndAutoPings()
-        {
-            foreach (var item in UserStatus)
-            {
-                await EndAutoPing(item.Key);
-            }
-        }
+        }               
 
         private async void time(object stateInfo)
         {
-            await PingSessions();
+            await AutoPingSessions();
         }
     }
 }

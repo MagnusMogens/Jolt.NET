@@ -75,7 +75,7 @@ namespace Jolt.NET.UI.ViewModels
                 RaisePropertyChanged(nameof(GameId));
                 ShowResultOnError(await SessionManager.OpenSession());
                 ShowResultOnError(await SessionManager.PingSession());
-                await SessionManager.AutoPing();
+                await SessionManager.AutoPingUser();
             }
         }
 
@@ -106,7 +106,7 @@ namespace Jolt.NET.UI.ViewModels
 
         public override void Cleanup()
         {
-            SessionManager.EndAutoPings();
+            SessionManager.StopAutoPing();
             base.Cleanup();
         }
     }
