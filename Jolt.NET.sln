@@ -20,6 +20,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wiki", "Wiki", "{13743C8C-8183-4E39-BDC9-461F990AB96F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{887DE3AC-3FEA-4BDF-932C-D82008BA2547}"
+	ProjectSection(SolutionItems) = preProject
+		wiki\images\game_client_cd.png = wiki\images\game_client_cd.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
