@@ -8,7 +8,7 @@
              StartupUri="MainWindow.xaml" >
     <Application.Resources>
         <ResourceDictionary>
-            <vm:ViewModelLocator x:Key="Locator"  d:IsDataSource="True" />
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
 
             <c:ToUpperCaseConverter x:Key="ToUpperCaseConverter" />
             <c:EnumConverter x:Key="EnumConverter" />

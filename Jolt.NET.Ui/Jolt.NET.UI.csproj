@@ -132,9 +132,15 @@
     <Compile Include="Converter\ToUpperCaseConverter.cs" />
     <Compile Include="Converter\ValueConverterGroup.cs" />
     <Compile Include="Common\AutoRelayCommand.cs" />
+    <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\WatermarkAdorner.cs" />
     <Compile Include="Services\WatermarkService.cs" />
+    <Compile Include="ViewModels\DataStorageViewModel.cs" />
+    <Compile Include="ViewModels\GeneralViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ScoreViewModel.cs" />
+    <Compile Include="ViewModels\TrophyViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -31,7 +31,7 @@
         <StatusBar Background="#C1C1C1" DockPanel.Dock="Bottom" FontFamily="./fonts/#Lato">
             <Label Content="{Binding GameId}" ContentStringFormat="Game: {0}"/>
             <Separator />
-            <Label Content="{Binding UserName}" ContentStringFormat="Logged in user: {0}"/>
+            <Label Content="{Binding User.Username}" ContentStringFormat="Logged in user: {0}"/>
             <Separator />
             <Label Content="{Binding LastPinged}" ContentStringFormat="Last pinged at: {0:HH:mm:ss}"/>
             <Separator />
@@ -39,7 +39,8 @@
         </StatusBar>
         
         <TabControl Style="{StaticResource JoltTabControl}">
-            <TabItem Header="GENERAL" Style="{StaticResource JoltTabItem}">
+            <TabItem Header="GENERAL" Style="{StaticResource JoltTabItem}" 
+                     DataContext="{Binding Source={StaticResource Locator}, Path=General}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -75,7 +76,8 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="USER" Style="{StaticResource JoltTabItem}">
+            <TabItem Header="USER" Style="{StaticResource JoltTabItem}"
+                     DataContext="{Binding Source={StaticResource Locator}, Path=User}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -137,7 +139,8 @@
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="TROPHIES" Style="{StaticResource JoltTabItem}">
+            <TabItem Header="TROPHIES" Style="{StaticResource JoltTabItem}"
+                     DataContext="{Binding Source={StaticResource Locator}, Path=Trophy}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -165,7 +168,7 @@
                                         </StackPanel>
                                         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                                             <Button Height="34" Width="150" Content="ACHIEVE TROPHY" Margin="3" Style="{StaticResource JoltButton}" 
-                                                    Command="{Binding Main.AchieveTrophyCommand, IsAsync=True, Source={StaticResource Locator}}" CommandParameter="{Binding}" />
+                                                    Command="{Binding Trophy.AchieveTrophyCommand, IsAsync=True, Source={StaticResource Locator}}" CommandParameter="{Binding}" />
                                         </StackPanel>
                                     </DockPanel>
 
@@ -188,7 +191,8 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="DATA STORAGE" Style="{StaticResource JoltTabItem}">
+            <TabItem Header="DATA STORAGE" Style="{StaticResource JoltTabItem}"
+                     DataContext="{Binding Source={StaticResource Locator}, Path=DataStorage}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -210,7 +214,7 @@
                                         </StackPanel>
                                         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                                             <Button Height="34" Width="150" Content="FETCH DATA" Margin="3" Style="{StaticResource JoltButton}" 
-                                                    Command="{Binding Main.FetchDataCommand, IsAsync=True, Source={StaticResource Locator}}" CommandParameter="{Binding Key}" />
+                                                    Command="{Binding DataStorage.FetchDataCommand, IsAsync=True, Source={StaticResource Locator}}" CommandParameter="{Binding Key}" />
                                         </StackPanel>
                                     </DockPanel>
                                 </Grid>
@@ -242,7 +246,8 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="SCORES" Style="{StaticResource JoltTabItem}">
+            <TabItem Header="SCORES" Style="{StaticResource JoltTabItem}"
+                     DataContext="{Binding Source={StaticResource Locator}, Path=Score}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
