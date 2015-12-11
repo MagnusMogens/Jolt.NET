@@ -36,6 +36,11 @@ namespace Jolt.NET.UI.ViewModels
             get { return Core.Settings.Instance.GameId; }
         }
 
+        public SessionStatus Status
+        {
+            get { return SessionManager.GetSessionStatus(); }
+        }
+
         private DateTime _lastPinged;
         public DateTime LastPinged
         {
@@ -70,7 +75,7 @@ namespace Jolt.NET.UI.ViewModels
                 RaisePropertyChanged(nameof(GameId));
                 ShowResultOnError(await SessionManager.OpenSession());
                 ShowResultOnError(await SessionManager.PingSession());
-                SessionManager.AutoPing();
+                await SessionManager.AutoPing();
             }
         }
 
@@ -91,14 +96,17 @@ namespace Jolt.NET.UI.ViewModels
         private void OnPingSessionCompleted(object sender, ResponseEventArgs e)
         {
             if (e.Success)
+            {
                 LastPinged = DateTime.Now;
+                RaisePropertyChanged(nameof(Status));
+            }
         }
 
         #endregion
 
         public override void Cleanup()
         {
-            SessionManager.EndAutoPing();
+            SessionManager.EndAutoPings();
             base.Cleanup();
         }
     }

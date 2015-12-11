@@ -6,21 +6,31 @@ using Jolt.NET.Network;
 using Jolt.NET.Data;
 using Jolt.NET.Helper;
 using System.Threading;
+using System.Linq;
 
 namespace Jolt.NET
 {
     public class SessionManager
     {
-        Timer timer;
-        SessionStatus autoStatus;
+        #region Properties
+
+        private Timer timer { get; set; }
+        public Dictionary<User, SessionStatus> UserStatus { get; set; }
+
+        #endregion
 
         #region Events
-        
+
         public event EventHandler<ResponseEventArgs> OpenSessionCompleted;
         public event EventHandler<ResponseEventArgs> PingSessionCompleted;
         public event EventHandler<ResponseEventArgs> CloseSessionCompleted;
 
         #endregion
+
+        public SessionManager()
+        {
+            UserStatus = new Dictionary<User, SessionStatus>();
+        }
         
         public async Task<SuccessResponse> OpenSession(User user = null)
         {
@@ -45,6 +55,7 @@ namespace Jolt.NET
         public async Task<SuccessResponse> PingSession(SessionStatus status = SessionStatus.Active, User user = null)
         {
             var u = user ?? Settings.Instance.CurrentUser;
+            UserStatus[u] = status;
 
             var request = NetworkClient.CreateWebRequest(RequestType.Sessions,
                                                          new Dictionary<RequestParameter, string>
@@ -62,10 +73,28 @@ namespace Jolt.NET
                 return sessionResponse;
             }
         }
+
+        public async Task PingSessions()
+        {
+            foreach (var item in UserStatus)
+            {
+                await PingSession(item.Value, item.Key);
+            }
+        }
         
+        public SessionStatus GetSessionStatus(User user = null)
+        {
+            var u = user ?? Settings.Instance.CurrentUser;
+            if (u == null) return SessionStatus.Idle;
+
+            var status = UserStatus.ContainsKey(u) ? UserStatus[u] : SessionStatus.Idle;
+            return status;
+        }
+
         public async Task<SuccessResponse> CloseSession(User user = null)
         {
             var u = user ?? Settings.Instance.CurrentUser;
+            if (UserStatus.ContainsKey(u)) UserStatus.Remove(u);
 
             var request = NetworkClient.CreateWebRequest(RequestType.Sessions,
                                                          new Dictionary<RequestParameter, string>
@@ -83,42 +112,55 @@ namespace Jolt.NET
             }
         }
 
-        public void AutoPing(int seconds = 30, SessionStatus status = SessionStatus.Active)
+        public async Task AutoPing(int seconds = 30, SessionStatus status = SessionStatus.Active, User user = null)
         {
             var milliSeconds = seconds * 1000;
-            autoStatus = status;
+            var u = user ?? Settings.Instance.CurrentUser;
+            UserStatus[u] = status;
 
             if (timer == null)
                 InitializeTimer(milliSeconds);
             else
-                ChangeTimer(milliSeconds);
+                await ChangeTimer(milliSeconds);
         }
 
         private void InitializeTimer(int milliSeconds)
         {
-            var autoEvent = new AutoResetEvent(false);
-            timer = new Timer(time, autoEvent, milliSeconds, milliSeconds);
+            timer = new Timer(time, new AutoResetEvent(false), milliSeconds, milliSeconds);
         }
 
-        private async void ChangeTimer(int milliSeconds)
+        private async Task ChangeTimer(int milliSeconds)
         {
             if (milliSeconds == 0)
                 timer.Dispose();
             else
             {
-                await PingSession(autoStatus);
+                await PingSessions();
                 timer.Change(milliSeconds, milliSeconds);
             }
         }
 
-        public void EndAutoPing()
+        public async Task EndAutoPing(User user = null)
         {
-            AutoPing(0);
+            if (UserStatus.ContainsKey(user))
+            {
+                UserStatus.Remove(user);
+            }
+            if (!UserStatus.Any())
+                await AutoPing(0);
+        }
+
+        public async Task EndAutoPings()
+        {
+            foreach (var item in UserStatus)
+            {
+                await EndAutoPing(item.Key);
+            }
         }
 
         private async void time(object stateInfo)
         {
-            await PingSession(autoStatus);
+            await PingSessions();
         }
     }
 }
