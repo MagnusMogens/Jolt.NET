@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="GameId" Type="System.String" Scope="User">
-      <Value Profile="(Default)">22926</Value>
+      <Value Profile="(Default)">113561</Value>
     </Setting>
     <Setting Name="GameKey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">a9d883aa16a61f2af1d14d09c0d44c71</Value>
+      <Value Profile="(Default)">ad36800f1061c86d26c49766a36185c3</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">MagnusMogens</Value>

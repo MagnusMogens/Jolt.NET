@@ -37,6 +37,8 @@ namespace Jolt.NET
         public async Task<SuccessResponse> OpenSession(User user = null)
         {
             var u = user ?? Settings.Instance.CurrentUser;
+            UserStatus[u] = SessionStatus.Active;
+
             var request = NetworkClient.CreateWebRequest(RequestType.Sessions,
                                                       new Dictionary<RequestParameter, string>
                                                       {
@@ -57,6 +59,7 @@ namespace Jolt.NET
         public async Task<SuccessResponse> PingSession(SessionStatus status = SessionStatus.Active, User user = null)
         {
             var u = user ?? Settings.Instance.CurrentUser;
+            if (!UserStatus.ContainsKey(u)) await OpenSession(user);
             UserStatus[u] = status;
 
             var request = NetworkClient.CreateWebRequest(RequestType.Sessions,
