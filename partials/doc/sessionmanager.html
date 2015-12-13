@@ -38,9 +38,9 @@ class Program
 
             <h4>Ping multiple user</h4>
             <p>Jolt.NET offers to ping multiple users each with their own session state.</p>
-            <div hljs hljs-language="cs">manager.AutoPingUser(30, SessionStatus.Active, Settings.Instance.AuthenticatedUsers[0]);
-manager.AutoPingUser(30, SessionStatus.Active, Settings.Instance.AuthenticatedUsers[1]);
-manager.AutoPingUser(30, SessionStatus.Idle, Settings.Instance.AuthenticatedUsers[2]);</div>
+            <div hljs hljs-language="cs">manager.AutoPingUser(SessionStatus.Active, Settings.Instance.AuthenticatedUsers[0]);
+manager.AutoPingUser(SessionStatus.Active, Settings.Instance.AuthenticatedUsers[1]);
+manager.AutoPingUser(SessionStatus.Idle, Settings.Instance.AuthenticatedUsers[2]);</div>
 
   		  </div>
   	</div>
