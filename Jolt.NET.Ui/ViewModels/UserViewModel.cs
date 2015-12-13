@@ -49,9 +49,9 @@ namespace Jolt.NET.UI.ViewModels
         #region Commands
 
         public RelayCommand SetSessionStatusCommand { get; set; }
-        private async void SetSessionStatus()
+        private void SetSessionStatus()
         {
-            await SessionManager.AutoPingUser(30, Status);
+            SessionManager.AutoPingUser(Status);
         }
 
         #endregion
