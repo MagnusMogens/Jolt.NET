@@ -1,0 +1,47 @@
+<div class="container">
+  	<div class="row spacer">
+  		<div class="col-lg-12">
+  	  		<h2>Session Manager</h2>
+  	  		<p>The session manager is used to handle the sessions to gamejolt from one or multiple users.</p>
+
+  	  		<h3>Examples</h3>
+          <p>In the following example a new instance of the game client will be created. After an user is authentificated a session will be established and automatically pinged.</p>
+          <div hljs hljs-language="cs">using Jolt.NET;
+using Jolt.NET.Network;
+
+
+class Program
+{
+    SessionManager manager;
+    GameClient client;
+
+    void Main(string[] args)
+    {
+        client = new GameClient("gameId", "gameKey");
+        manager = new SessionManager();
+
+        client.AuthenticationCompleted += OnAuthenticationCompleted;
+        // The first user who is authenticated is set as default user in the Settings class.
+        client.AuthenticateUser("username", "token");    
+    }
+
+    private void OnAuthenticationCompleted(object sender, ResponseEventArgs e)
+    {
+        // All functions with an user parameter can be used with or without user. If no
+        // user is specified the current authenticated default User is used.
+        manager.OpenSession();
+        // By default the user session will now be pinged every 30 seconds with the status 'active'.
+        manager.AutoPingUser();
+    }
+}
+</div>
+
+            <h4>Ping multiple user</h4>
+            <p>Jolt.NET offers to ping multiple users each with their own session state.</p>
+            <div hljs hljs-language="cs">manager.AutoPingUser(30, SessionStatus.Active, Settings.Instance.AuthenticatedUsers[0]);
+manager.AutoPingUser(30, SessionStatus.Active, Settings.Instance.AuthenticatedUsers[1]);
+manager.AutoPingUser(30, SessionStatus.Idle, Settings.Instance.AuthenticatedUsers[2]);</div>
+
+  		  </div>
+  	</div>
+</div>

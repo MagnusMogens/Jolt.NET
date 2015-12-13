@@ -1,0 +1,28 @@
+<div class="container">
+  	<div class="row spacer">
+  		<div class="col-lg-12">
+  	  		<h2>Trophy client</h2>
+  	  		<p>The trophy client is used to fetch the trophies (all, achieven, non achieved) and to achieve trophies.</p>
+
+  	  		<h3>Examples</h3>
+  	  		<h4>Fetch Trophies</h4>
+  	  		<div hljs hljs-language="csharp">private async void FetchSomeTrophies()
+{
+    TrophyClient trophyClient = new TrophyClient();
+
+    // You can fetch all trophies..
+    IEnumerable<Trophy> allTrophies = await trophyClient.FetchAllTrophies();
+    // .. or only achieved trophies..
+    IEnumerable<Trophy> achievedTrophies = await trophyClient.FetchAchievedTrophies();
+    // .. or only non achieved tophies.
+    IEnumerable<Trophy> nonAchievedTrophies = await trophyClient.FetchNonAchievedTrophies();
+
+    // Also you can fetch one or more trophies by their id.
+    IEnumerable<Trophy> selectedTrophies = await trophyClient.FetchTrophyById(5947, 2584);
+}</div>
+			<h4>Achieve Trophies</h4>
+			<p>To achieve a trophy you only need following line.</p>
+			<div hljs hljs-language="cs">await trophyClient.AchieveTrophy(5947);</div>
+		</div>
+  	</div>
+</div>
