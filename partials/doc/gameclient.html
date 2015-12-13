@@ -1,0 +1,23 @@
+<div class="container">
+  	<div class="row spacer">
+  		<div class="col-lg-12">
+  	  		<h2>Game client documentation</h2>
+
+  	  		<p>The game client is used to register a game in the API, authenticate a user and to fetch its data.</p>
+
+  	  		<h3>Examples</h3>
+  	  		<h4>Register a game and authenticate a user</h4>
+  	  		<div hljs hljs-language="cs">GameClient client = new GameClient("gameId", "gameKey");
+client.AuthenticateUser("username", "token");</div>
+			<p>Alternatively you can also register a game like this:</p>
+			<div hljs hljs-language="cs">client.RegisterGame("gameId", "gameKey");</div>
+			<p>If the authentication is completed the <code>AuthenticationCompleted</code> event is fired.</p>
+			<h4>Fetch user data</h4>
+			<div hljs hljs-language="cs">// You can fetch user by their id..
+IEnumerable<User> users = client.FetchUser(101, 500, 524);
+// ..or by their username.
+User user = client.FetchUserByName("username");</div>
+			<p>If the user data is fetched the <code>FetchUserCompleted</code> event is fired.</p>
+  		</div>
+  	</div>
+</div>
