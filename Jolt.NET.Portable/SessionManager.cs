@@ -37,6 +37,8 @@ namespace Jolt.NET
         public async Task<SuccessResponse> OpenSession(User user = null)
         {
             var u = user ?? Settings.Instance.CurrentUser;
+            UserStatus[u] = SessionStatus.Active;
+
             var request = NetworkClient.CreateWebRequest(RequestType.Sessions,
                                                       new Dictionary<RequestParameter, string>
                                                       {
@@ -57,6 +59,7 @@ namespace Jolt.NET
         public async Task<SuccessResponse> PingSession(SessionStatus status = SessionStatus.Active, User user = null)
         {
             var u = user ?? Settings.Instance.CurrentUser;
+            if (!UserStatus.ContainsKey(u)) await OpenSession(user);
             UserStatus[u] = status;
 
             var request = NetworkClient.CreateWebRequest(RequestType.Sessions,
@@ -123,17 +126,23 @@ namespace Jolt.NET
             }
         }
 
-        public async Task AutoPingUser(int period = 30, SessionStatus status = SessionStatus.Active, User user = null)
+        public void AutoPingUser(SessionStatus status = SessionStatus.Active, User user = null)
         {
-            var milliSeconds = period * 1000;
             var u = user ?? Settings.Instance.CurrentUser;
             if (!AutoPingedUser.Contains(u)) AutoPingedUser.Add(u);
             UserStatus[u] = status;
 
             if (timer == null)
-                InitializeTimer(milliSeconds);
+                // Ping the user status every 30 seconds.
+                InitializeTimer(30 * 1000);
+        }
+
+        public async Task SetPingPeriod(int period)
+        {
+            if (timer == null)
+                InitializeTimer(30 * 1000);
             else
-                await ChangeTimer(milliSeconds);
+                await ChangeTimer(period * 1000);
         }
 
         public async Task StopAutoPingUser(User user = null)

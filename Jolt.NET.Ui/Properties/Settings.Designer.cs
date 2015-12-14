@@ -25,7 +25,7 @@ namespace Jolt.NET.UI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("22926")]
+        [global::System.Configuration.DefaultSettingValueAttribute("113561")]
         public string GameId {
             get {
                 return ((string)(this["GameId"]));
@@ -37,7 +37,7 @@ namespace Jolt.NET.UI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("a9d883aa16a61f2af1d14d09c0d44c71")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ad36800f1061c86d26c49766a36185c3")]
         public string GameKey {
             get {
                 return ((string)(this["GameKey"]));
