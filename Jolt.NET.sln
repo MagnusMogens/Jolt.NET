@@ -14,15 +14,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{90E5B984-6F47-415C-855F-EDD9A60F4FEB}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
+		Microsoft Public License.txt = Microsoft Public License.txt
 		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wiki", "Wiki", "{13743C8C-8183-4E39-BDC9-461F990AB96F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{887DE3AC-3FEA-4BDF-932C-D82008BA2547}"
-	ProjectSection(SolutionItems) = preProject
-		wiki\images\game_client_cd.png = wiki\images\game_client_cd.png
-		wiki\images\user_cd.png = wiki\images\user_cd.png
 	EndProjectSection
 EndProject
 Global
@@ -108,9 +101,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{13743C8C-8183-4E39-BDC9-461F990AB96F} = {90E5B984-6F47-415C-855F-EDD9A60F4FEB}
-		{887DE3AC-3FEA-4BDF-932C-D82008BA2547} = {13743C8C-8183-4E39-BDC9-461F990AB96F}
 	EndGlobalSection
 EndGlobal
