@@ -1,4 +1,4 @@
-# Jolt.NET
+# [Jolt.NET](http://magnusmogens.github.io/Jolt.NET)
 Jolt.NET is a gamejolt API wrapper which is deployed as a portable class library ([PCL](https://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx))
 
 [![Apache 2 License](http://img.shields.io/badge/license-Apache_2-blue.svg?style=flat-square)](https://github.com/MagnusMogens/Jolt.NET/blob/master/LICENSE)
