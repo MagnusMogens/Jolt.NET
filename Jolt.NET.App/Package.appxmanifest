@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="fee3053d-d960-4c29-9573-34ff82527ab7"
-    Publisher="CN=pjohann"
+    Name="874b2d47-6d72-471e-bb8d-54f374cac90f"
+    Publisher="CN=Pascal"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="fee3053d-d960-4c29-9573-34ff82527ab7" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="874b2d47-6d72-471e-bb8d-54f374cac90f" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Jolt.NET.App</DisplayName>
-    <PublisherDisplayName>pjohann</PublisherDisplayName>
+    <PublisherDisplayName>Pascal</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

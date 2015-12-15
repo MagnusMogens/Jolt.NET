@@ -3,7 +3,15 @@
   "version": 1,
   "targets": {
     "UAP,Version=v10.0": {
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "CommonServiceLocator/1.3.0": {
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -11,9 +19,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.3, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -22,10 +30,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.0.0, )"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -232,47 +240,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/1.1.86-beta": {
+      "MvvmLightLibs/5.2.0": {
         "dependencies": {
-          "PInvoke.BCrypt": "[0.1.122-beta, )",
-          "Validation": "[2.2.8, )"
+          "CommonServiceLocator": "[1.3.0, )"
         },
         "compile": {
-          "lib/win81/PCLCrypto.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         },
         "runtime": {
-          "lib/win81/PCLCrypto.dll": {}
-        }
-      },
-      "PInvoke.BCrypt/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Kernel32": "[0.1.122-beta, )",
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        }
-      },
-      "PInvoke.Kernel32/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        }
-      },
-      "PInvoke.Windows.Core/0.1.122-beta": {
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -1609,18 +1589,18 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Validation/2.2.8": {
-        "compile": {
-          "lib/dotnet/Validation.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/Validation.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-arm": {
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "CommonServiceLocator/1.3.0": {
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -1628,9 +1608,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.3, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -1639,10 +1619,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.0.0, )"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -1892,47 +1872,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/1.1.86-beta": {
+      "MvvmLightLibs/5.2.0": {
         "dependencies": {
-          "PInvoke.BCrypt": "[0.1.122-beta, )",
-          "Validation": "[2.2.8, )"
+          "CommonServiceLocator": "[1.3.0, )"
         },
         "compile": {
-          "lib/win81/PCLCrypto.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         },
         "runtime": {
-          "lib/win81/PCLCrypto.dll": {}
-        }
-      },
-      "PInvoke.BCrypt/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Kernel32": "[0.1.122-beta, )",
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        }
-      },
-      "PInvoke.Kernel32/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        }
-      },
-      "PInvoke.Windows.Core/0.1.122-beta": {
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3316,18 +3268,18 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Validation/2.2.8": {
-        "compile": {
-          "lib/dotnet/Validation.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/Validation.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "CommonServiceLocator/1.3.0": {
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -3335,9 +3287,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.3, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -3346,10 +3298,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.0.0, )"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -3585,47 +3537,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/1.1.86-beta": {
+      "MvvmLightLibs/5.2.0": {
         "dependencies": {
-          "PInvoke.BCrypt": "[0.1.122-beta, )",
-          "Validation": "[2.2.8, )"
+          "CommonServiceLocator": "[1.3.0, )"
         },
         "compile": {
-          "lib/win81/PCLCrypto.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         },
         "runtime": {
-          "lib/win81/PCLCrypto.dll": {}
-        }
-      },
-      "PInvoke.BCrypt/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Kernel32": "[0.1.122-beta, )",
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        }
-      },
-      "PInvoke.Kernel32/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        }
-      },
-      "PInvoke.Windows.Core/0.1.122-beta": {
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -4995,18 +4919,18 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Validation/2.2.8": {
-        "compile": {
-          "lib/dotnet/Validation.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/Validation.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x64": {
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "CommonServiceLocator/1.3.0": {
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -5014,9 +4938,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.3, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -5025,10 +4949,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.0.0, )"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -5283,47 +5207,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/1.1.86-beta": {
+      "MvvmLightLibs/5.2.0": {
         "dependencies": {
-          "PInvoke.BCrypt": "[0.1.122-beta, )",
-          "Validation": "[2.2.8, )"
+          "CommonServiceLocator": "[1.3.0, )"
         },
         "compile": {
-          "lib/win81/PCLCrypto.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         },
         "runtime": {
-          "lib/win81/PCLCrypto.dll": {}
-        }
-      },
-      "PInvoke.BCrypt/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Kernel32": "[0.1.122-beta, )",
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        }
-      },
-      "PInvoke.Kernel32/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        }
-      },
-      "PInvoke.Windows.Core/0.1.122-beta": {
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -6707,18 +6603,18 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Validation/2.2.8": {
-        "compile": {
-          "lib/dotnet/Validation.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/Validation.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "CommonServiceLocator/1.3.0": {
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -6726,9 +6622,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.3, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -6737,10 +6633,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.0.0, )"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -6976,47 +6872,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/1.1.86-beta": {
+      "MvvmLightLibs/5.2.0": {
         "dependencies": {
-          "PInvoke.BCrypt": "[0.1.122-beta, )",
-          "Validation": "[2.2.8, )"
+          "CommonServiceLocator": "[1.3.0, )"
         },
         "compile": {
-          "lib/win81/PCLCrypto.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         },
         "runtime": {
-          "lib/win81/PCLCrypto.dll": {}
-        }
-      },
-      "PInvoke.BCrypt/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Kernel32": "[0.1.122-beta, )",
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        }
-      },
-      "PInvoke.Kernel32/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        }
-      },
-      "PInvoke.Windows.Core/0.1.122-beta": {
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -8386,18 +8254,18 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Validation/2.2.8": {
-        "compile": {
-          "lib/dotnet/Validation.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/Validation.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x86": {
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "CommonServiceLocator/1.3.0": {
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -8405,9 +8273,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.3, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -8416,10 +8284,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.0.0, )"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -8674,47 +8542,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/1.1.86-beta": {
+      "MvvmLightLibs/5.2.0": {
         "dependencies": {
-          "PInvoke.BCrypt": "[0.1.122-beta, )",
-          "Validation": "[2.2.8, )"
+          "CommonServiceLocator": "[1.3.0, )"
         },
         "compile": {
-          "lib/win81/PCLCrypto.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         },
         "runtime": {
-          "lib/win81/PCLCrypto.dll": {}
-        }
-      },
-      "PInvoke.BCrypt/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Kernel32": "[0.1.122-beta, )",
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        }
-      },
-      "PInvoke.Kernel32/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        }
-      },
-      "PInvoke.Windows.Core/0.1.122-beta": {
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -10098,18 +9938,18 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Validation/2.2.8": {
-        "compile": {
-          "lib/dotnet/Validation.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/Validation.dll": {}
-        }
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
-      "Microsoft.ApplicationInsights/1.2.3": {
+      "CommonServiceLocator/1.3.0": {
+        "compile": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         },
@@ -10117,9 +9957,9 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
+      "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.2.3, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )"
         },
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
@@ -10128,10 +9968,10 @@
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
+      "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "[1.1.0, )",
-          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.1.0, )"
+          "Microsoft.ApplicationInsights": "[1.0.0, )",
+          "Microsoft.ApplicationInsights.PersistenceChannel": "[1.0.0, )"
         },
         "compile": {
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
@@ -10367,47 +10207,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/1.1.86-beta": {
+      "MvvmLightLibs/5.2.0": {
         "dependencies": {
-          "PInvoke.BCrypt": "[0.1.122-beta, )",
-          "Validation": "[2.2.8, )"
+          "CommonServiceLocator": "[1.3.0, )"
         },
         "compile": {
-          "lib/win81/PCLCrypto.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         },
         "runtime": {
-          "lib/win81/PCLCrypto.dll": {}
-        }
-      },
-      "PInvoke.BCrypt/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Kernel32": "[0.1.122-beta, )",
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll": {}
-        }
-      },
-      "PInvoke.Kernel32/0.1.122-beta": {
-        "dependencies": {
-          "PInvoke.Windows.Core": "[0.1.122-beta, )"
-        },
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll": {}
-        }
-      },
-      "PInvoke.Windows.Core/0.1.122-beta": {
-        "compile": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll": {}
+          "lib/windows81/GalaSoft.MvvmLight.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Extras.dll": {},
+          "lib/windows81/GalaSoft.MvvmLight.Platform.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -11777,20 +11589,27 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Validation/2.2.8": {
-        "compile": {
-          "lib/dotnet/Validation.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/Validation.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "Microsoft.ApplicationInsights/1.2.3": {
-      "sha512": "a34atobxpucCTTX9VCD7aIu6Ydzry+Va7TxK2tTQcfaMvefGW4kUKtg9GHKIn19IaXe+A4oZt/GBqsOt5vQrBA==",
+    "CommonServiceLocator/1.3.0": {
+      "sha512": "fbjO0SNwbOFPdwVfyqv+B7gIJ2CVBOFPKqn1mDDECK7KER8jFaOdcvroFYoAHa0ktPbxi5s+15qOLnA96f8GSA==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "CommonServiceLocator.nuspec",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.pdb",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.XML",
+        "package/services/metadata/core-properties/8a82b9e5a63a439481bfa8d4ec335002.psmdcp",
+        "package/services/metadata/core-properties/99be0c88b2fd41c8b07c42071005ee47.psmdcp"
+      ]
+    },
+    "Microsoft.ApplicationInsights/1.0.0": {
+      "sha512": "HZ47/thX57SOuIivSvIbsR6L9CCb/Yt3IyB2i4KHmmNlf3DO+lqFwWIKDdbDNWKX+qh0Rg20/JSMPK0dwUsYYw==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -11804,29 +11623,27 @@
         "lib/wp8/Microsoft.ApplicationInsights.dll",
         "lib/wp8/Microsoft.ApplicationInsights.XML",
         "Microsoft.ApplicationInsights.nuspec",
-        "package/services/metadata/core-properties/3b36eef276524f5d883c618d5fd8c500.psmdcp"
+        "package/services/metadata/core-properties/b9e7bc7ab2454491af07046165ff01d0.psmdcp"
       ]
     },
-    "Microsoft.ApplicationInsights.PersistenceChannel/1.2.3": {
-      "sha512": "5MGcvPQVaGlGyAVh9adg4sSkIVSYDKn+H3+YnZa9hi1gH/g6UsRt4HLc8vp/IxjlbmXbJyAB7dYJV/NHmAGAgA==",
+    "Microsoft.ApplicationInsights.PersistenceChannel/1.0.0": {
+      "sha512": "0qQXC+CtbyF2RPuld5pF74fxsnP6ml0LUnzQ6GL9AXXY64LPsLDsPUAymoUffo7LZvPDppZboTYX59TfVxKA7A==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
         "_rels/.rels",
         "lib/net40/Microsoft.ApplicationInsights.PersistenceChannel.dll",
         "lib/net40/Microsoft.ApplicationInsights.PersistenceChannel.XML",
-        "lib/net45/Microsoft.ApplicationInsights.PersistenceChannel.dll",
-        "lib/net45/Microsoft.ApplicationInsights.PersistenceChannel.XML",
+        "lib/portable-win8+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.XML",
         "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.dll",
-        "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.PersistenceChannel.XML",
         "lib/wp8/Microsoft.ApplicationInsights.PersistenceChannel.dll",
         "lib/wp8/Microsoft.ApplicationInsights.PersistenceChannel.XML",
         "Microsoft.ApplicationInsights.PersistenceChannel.nuspec",
-        "package/services/metadata/core-properties/f973733421c14c3594986b3f2c22213a.psmdcp"
+        "package/services/metadata/core-properties/dc9ebba80e7343fdbd0a39a3cdeb672c.psmdcp"
       ]
     },
-    "Microsoft.ApplicationInsights.WindowsApps/1.1.0": {
-      "sha512": "H6nhyM+ZVOhLmF8cqQj70fc5HZOS6dxh18nNwEM7+HD8NzArdSLK0gwGJkEOUYPtjner/0/3aOxgGZbFi9OVdA==",
+    "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
+      "sha512": "fNCAjIwvbTV+G0dT14bgM5tptsqeSaKQaCrlq7QknOq1Xdm8ZmgsDYddMgXkvykyKLjWyU6fKuOpj6fsQJy+wQ==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -11838,7 +11655,7 @@
         "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.dll",
         "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.XML",
         "Microsoft.ApplicationInsights.WindowsApps.nuspec",
-        "package/services/metadata/core-properties/441e5d0bc7164e089277ae041b2043cc.psmdcp"
+        "package/services/metadata/core-properties/4f6f732debe548beaa1183418e8d65cc.psmdcp"
       ]
     },
     "Microsoft.CSharp/4.0.0": {
@@ -12494,70 +12311,138 @@
         "ref/xamarinmac20/_._"
       ]
     },
-    "PCLCrypto/1.1.86-beta": {
-      "sha512": "p+LFFRt427iIzRpjvFQuOIFePZyYG+WcBsXgBd3CoSV9vX6neFMj35n3uj9490kd1WkRANw2caXBpliySMNjew==",
+    "MvvmLightLibs/5.2.0": {
+      "sha512": "F16xSNXK0nE5os3lrY+G2NkFdAXPJV7Ux8A9WUxZlyLZShUdCkoe14tov9KxGmgfCuQA/IKM/NWEyN0Dac1Mog==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
         "_rels/.rels",
-        "lib/monoandroid/PCLCrypto.dll",
-        "lib/monoandroid/PCLCrypto.xml",
-        "lib/monotouch/PCLCrypto.dll",
-        "lib/monotouch/PCLCrypto.xml",
-        "lib/net45/PCLCrypto.dll",
-        "lib/net45/PCLCrypto.xml",
-        "lib/portable-net45+win+wpa81+wp80+uwp10+dnxcore50+MonoAndroid10+xamarinios10+MonoTouch10/PCLCrypto.dll",
-        "lib/portable-net45+win+wpa81+wp80+uwp10+dnxcore50+MonoAndroid10+xamarinios10+MonoTouch10/PCLCrypto.xml",
-        "lib/win81/PCLCrypto.dll",
-        "lib/win81/PCLCrypto.pri",
-        "lib/win81/PCLCrypto.xml",
-        "lib/wp8/PCLCrypto.dll",
-        "lib/wp8/PCLCrypto.xml",
-        "lib/wpa81/PCLCrypto.dll",
-        "lib/wpa81/PCLCrypto.pri",
-        "lib/wpa81/PCLCrypto.xml",
-        "lib/Xamarin.iOS/PCLCrypto.dll",
-        "lib/Xamarin.iOS/PCLCrypto.xml",
-        "package/services/metadata/core-properties/e774b5957c61428bacd6355eff2d3950.psmdcp",
-        "PCLCrypto.nuspec"
-      ]
-    },
-    "PInvoke.BCrypt/0.1.122-beta": {
-      "sha512": "n0jbWnaOEpRnI6NHb6uDOW5sODbKA6AOoblReYr9srCHLS0wZcOKcvBvOlZgTtb6ecDBV81RaLpULCVAjfm32A==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.dll",
-        "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.BCrypt.xml",
-        "package/services/metadata/core-properties/df6c2b3935c741fda821fac206e33b46.psmdcp",
-        "PInvoke.BCrypt.nuspec"
-      ]
-    },
-    "PInvoke.Kernel32/0.1.122-beta": {
-      "sha512": "AdpBEcHzEkWG4g8eMVMjakHQ/JnV+Vx6Y2dbV7UQQqyHq8nobkJfTOnDFIPm0ZMyPXwPWzo5U6ZPgCv67faZ+Q==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "lib/net40/PInvoke.Kernel32.dll",
-        "lib/net40/PInvoke.Kernel32.xml",
-        "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.dll",
-        "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Kernel32.xml",
-        "package/services/metadata/core-properties/e20cad1f51df441ab275083bebdfa04e.psmdcp",
-        "PInvoke.Kernel32.nuspec"
-      ]
-    },
-    "PInvoke.Windows.Core/0.1.122-beta": {
-      "sha512": "bRP9g3DXt5wx4vtggJKd1fItVB0MlcRQNi4T4G52nZgi/CD3a+zYYXTDxfgKCeaqLEY2Ub4qfzHKJoYZ9vgMCA==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.dll",
-        "lib/portable-net40+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/PInvoke.Windows.Core.xml",
-        "package/services/metadata/core-properties/0cd133878b8f40c9aecbbe2727519b85.psmdcp",
-        "PInvoke.Windows.Core.nuspec"
+        "lib/monoandroid1/GalaSoft.MvvmLight.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Extras.XML",
+        "lib/monoandroid1/GalaSoft.MvvmLight.pdb",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.dll",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/monoandroid1/GalaSoft.MvvmLight.Platform.XML",
+        "lib/monoandroid1/GalaSoft.MvvmLight.XML",
+        "lib/net35/GalaSoft.MvvmLight.dll",
+        "lib/net35/GalaSoft.MvvmLight.Extras.dll",
+        "lib/net35/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/net35/GalaSoft.MvvmLight.Extras.xml",
+        "lib/net35/GalaSoft.MvvmLight.pdb",
+        "lib/net35/GalaSoft.MvvmLight.xml",
+        "lib/net35/System.Windows.Interactivity.dll",
+        "lib/net35/System.Windows.Interactivity.xml",
+        "lib/net40/GalaSoft.MvvmLight.dll",
+        "lib/net40/GalaSoft.MvvmLight.Extras.dll",
+        "lib/net40/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/net40/GalaSoft.MvvmLight.Extras.xml",
+        "lib/net40/GalaSoft.MvvmLight.pdb",
+        "lib/net40/GalaSoft.MvvmLight.xml",
+        "lib/net40/System.Windows.Interactivity.dll",
+        "lib/net40/System.Windows.Interactivity.xml",
+        "lib/net45/GalaSoft.MvvmLight.dll",
+        "lib/net45/GalaSoft.MvvmLight.Extras.dll",
+        "lib/net45/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/net45/GalaSoft.MvvmLight.Extras.xml",
+        "lib/net45/GalaSoft.MvvmLight.pdb",
+        "lib/net45/GalaSoft.MvvmLight.Platform.dll",
+        "lib/net45/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/net45/GalaSoft.MvvmLight.Platform.xml",
+        "lib/net45/GalaSoft.MvvmLight.xml",
+        "lib/net45/System.Windows.Interactivity.dll",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.dll",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.dll",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.Extras.XML",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.pdb",
+        "lib/portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10/GalaSoft.MvvmLight.XML",
+        "lib/SL4/GalaSoft.MvvmLight.dll",
+        "lib/SL4/GalaSoft.MvvmLight.Extras.dll",
+        "lib/SL4/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/SL4/GalaSoft.MvvmLight.Extras.xml",
+        "lib/SL4/GalaSoft.MvvmLight.pdb",
+        "lib/SL4/GalaSoft.MvvmLight.xml",
+        "lib/SL4/System.Windows.Interactivity.dll",
+        "lib/SL4/System.Windows.Interactivity.xml",
+        "lib/sl4-wp71/GalaSoft.MvvmLight.dll",
+        "lib/sl4-wp71/GalaSoft.MvvmLight.Extras.dll",
+        "lib/sl4-wp71/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/sl4-wp71/GalaSoft.MvvmLight.Extras.xml",
+        "lib/sl4-wp71/GalaSoft.MvvmLight.pdb",
+        "lib/sl4-wp71/GalaSoft.MvvmLight.xml",
+        "lib/sl4-wp71/Microsoft.Practices.ServiceLocation.dll",
+        "lib/sl4-wp71/Microsoft.Practices.ServiceLocation.xml",
+        "lib/sl4-wp71/System.Windows.Interactivity.dll",
+        "lib/sl4-wp71/System.Windows.Interactivity.xml",
+        "lib/SL5/GalaSoft.MvvmLight.dll",
+        "lib/SL5/GalaSoft.MvvmLight.Extras.dll",
+        "lib/SL5/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/SL5/GalaSoft.MvvmLight.Extras.xml",
+        "lib/SL5/GalaSoft.MvvmLight.pdb",
+        "lib/SL5/GalaSoft.MvvmLight.xml",
+        "lib/SL5/System.Windows.Interactivity.dll",
+        "lib/windows8/GalaSoft.MvvmLight.dll",
+        "lib/windows8/GalaSoft.MvvmLight.Extras.dll",
+        "lib/windows8/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/windows8/GalaSoft.MvvmLight.Extras.xml",
+        "lib/windows8/GalaSoft.MvvmLight.pdb",
+        "lib/windows8/GalaSoft.MvvmLight.Platform.dll",
+        "lib/windows8/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/windows8/GalaSoft.MvvmLight.Platform.pri",
+        "lib/windows8/GalaSoft.MvvmLight.Platform.xml",
+        "lib/windows8/GalaSoft.MvvmLight.xml",
+        "lib/windows81/GalaSoft.MvvmLight.dll",
+        "lib/windows81/GalaSoft.MvvmLight.Extras.dll",
+        "lib/windows81/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.Extras.xml",
+        "lib/windows81/GalaSoft.MvvmLight.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.dll",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.pri",
+        "lib/windows81/GalaSoft.MvvmLight.Platform.xml",
+        "lib/windows81/GalaSoft.MvvmLight.xml",
+        "lib/wp8/GalaSoft.MvvmLight.dll",
+        "lib/wp8/GalaSoft.MvvmLight.Extras.dll",
+        "lib/wp8/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/wp8/GalaSoft.MvvmLight.Extras.xml",
+        "lib/wp8/GalaSoft.MvvmLight.pdb",
+        "lib/wp8/GalaSoft.MvvmLight.Platform.dll",
+        "lib/wp8/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/wp8/GalaSoft.MvvmLight.Platform.xml",
+        "lib/wp8/GalaSoft.MvvmLight.xml",
+        "lib/wp8/System.Windows.Interactivity.dll",
+        "lib/wp81/GalaSoft.MvvmLight.dll",
+        "lib/wp81/GalaSoft.MvvmLight.Extras.dll",
+        "lib/wp81/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/wp81/GalaSoft.MvvmLight.Extras.xml",
+        "lib/wp81/GalaSoft.MvvmLight.pdb",
+        "lib/wp81/GalaSoft.MvvmLight.Platform.dll",
+        "lib/wp81/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/wp81/GalaSoft.MvvmLight.Platform.xml",
+        "lib/wp81/GalaSoft.MvvmLight.xml",
+        "lib/wp81/System.Windows.Interactivity.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.Extras.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/wpa81/GalaSoft.MvvmLight.Extras.XML",
+        "lib/wpa81/GalaSoft.MvvmLight.pdb",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.dll",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.pdb",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.pri",
+        "lib/wpa81/GalaSoft.MvvmLight.Platform.XML",
+        "lib/wpa81/GalaSoft.MvvmLight.XML",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.dll",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.dll",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.pdb",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Extras.XML",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.pdb",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Platform.dll",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.Platform.XML",
+        "lib/xamarin.ios10/GalaSoft.MvvmLight.XML",
+        "MvvmLightLibs.nuspec",
+        "package/services/metadata/core-properties/2416d2969a834c638aba3851d652cc13.psmdcp"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -15254,37 +15139,15 @@
         "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll",
         "System.Xml.XmlSerializer.nuspec"
       ]
-    },
-    "Validation/2.2.8": {
-      "sha512": "DMNc7JhPlgRwnR+NNb+ldoluObL+RBw96aMoiZae/Looa4vgaAnIysmle/bV2OKqDNW9oUBDckPyfa2+sX6JdA==",
-      "type": "Package",
-      "files": [
-        "[Content_Types].xml",
-        "_rels/.rels",
-        "lib/dotnet/Validation.dll",
-        "lib/dotnet/Validation.xml",
-        "lib/portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/Validation.dll",
-        "lib/portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/Validation.xml",
-        "lib/portable-net45+dnxcore50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/Validation.dll",
-        "lib/portable-net45+dnxcore50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/Validation.xml",
-        "package/services/metadata/core-properties/003a6ace22864119891d2dfb824fb274.psmdcp",
-        "README.md",
-        "tools/2013/RequiresNotNull.snippet",
-        "tools/2013/RequiresNotNullOrEmpty.snippet",
-        "tools/2015/RequiresNotNull.snippet",
-        "tools/2015/RequiresNotNullOrEmpty.snippet",
-        "tools/install_snippets.cmd",
-        "tools/uninstall_snippets.cmd",
-        "Validation.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.ApplicationInsights >= 1.2.3",
-      "Microsoft.ApplicationInsights.PersistenceChannel >= 1.2.3",
-      "Microsoft.ApplicationInsights.WindowsApps >= 1.1.0",
-      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0"
+      "Microsoft.ApplicationInsights >= 1.0.0",
+      "Microsoft.ApplicationInsights.PersistenceChannel >= 1.0.0",
+      "Microsoft.ApplicationInsights.WindowsApps >= 1.0.0",
+      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
+      "MvvmLightLibs >= 5.2.0"
     ],
     "UAP,Version=v10.0": []
   }
