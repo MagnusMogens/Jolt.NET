@@ -2,20 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:fa="http://schemas.fontawesome.io/icons/">
 
-    <SolidColorBrush x:Key="NormalBorderBrush" Color="#222" />
-    <SolidColorBrush x:Key="NormalBackgroundBrush" Color="#3E3E3E" />
-    <SolidColorBrush x:Key="NormalForegroundBrush" Color="#FFF" />
-    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#DDD" />
-    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#AAA" />
-    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#FF8BAE00" />
-
     <Style x:Key="JoltListBoxItem" TargetType="{x:Type ListBoxItem}">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
-                    <Border BorderBrush="{StaticResource ComboBoxDisabledBorderBrush}" 
+                    <Border BorderBrush="{DynamicResource SelectedHighlight}" 
                             x:Name="Border"
                             BorderThickness="0 3 0 0">
 
@@ -29,7 +22,7 @@
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
-                                            <EasingColorKeyFrame KeyTime="0" Value="#FF8BAE00" />
+                                            <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource SelectedHighlightColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -40,7 +33,7 @@
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
-                                            <EasingColorKeyFrame KeyTime="0" Value="#FF8BAE00" />
+                                            <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource SelectedHighlightColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -48,7 +41,7 @@
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
-                                            <EasingColorKeyFrame KeyTime="0" Value="#FF8BAE00" />
+                                            <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource SelectedHighlightColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -80,7 +73,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBox">
-                    <Border Name="Border" Background="{StaticResource NormalBackgroundBrush}">
+                    <Border Name="Border" Background="{DynamicResource DarkBackground}">
                         <ScrollViewer Margin="0" Focusable="false">
                             <StackPanel IsItemsHost="True" />
                         </ScrollViewer>

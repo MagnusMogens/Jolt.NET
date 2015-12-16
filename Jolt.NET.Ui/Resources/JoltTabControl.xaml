@@ -9,7 +9,7 @@
 				<RowDefinition Height="*"/>
 			</Grid.RowDefinitions>
 
-			<Border Background="#C1C1C1">
+            <Border Background="{DynamicResource LightBackground}">
 				<TabPanel IsItemsHost="True" />
 			</Border>
 
@@ -37,11 +37,11 @@
         </Border>
 		<ControlTemplate.Triggers>
 			<Trigger Property="IsSelected" Value="True">
-                <Setter TargetName="Border" Property="Background" Value="#FF3FAC" />
-                <Setter TargetName="Border" Property="TextBlock.Foreground" Value="White" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource PinkHighlight}" />
+                <Setter TargetName="Border" Property="TextBlock.Foreground" Value="{DynamicResource LightForeground}" />
             </Trigger>
 			<Trigger Property="IsSelected" Value="False">
-				<Setter TargetName="Border" Property="Background" Value="#C1C1C1" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource LightBackground}" />
 			</Trigger>
 		</ControlTemplate.Triggers>
 	</ControlTemplate>

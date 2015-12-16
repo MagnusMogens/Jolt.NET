@@ -16,8 +16,8 @@
     </ControlTemplate>
 
     <Style TargetType="TextBox" x:Key="JoltTextBox">
-        <Setter Property="Background" Value="#C1C1C1" />
-        <Setter Property="BorderBrush" Value="#B6B6B6" />
+        <Setter Property="Background" Value="{DynamicResource LightBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource LightBorder}" />
         <Setter Property="Template" Value="{StaticResource JoltTextBoxCT}" />
     </Style>
 </ResourceDictionary>

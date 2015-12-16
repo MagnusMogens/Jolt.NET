@@ -19,7 +19,7 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </Window.Resources>
-    <DockPanel Background="#3E3E3E">
+    <DockPanel Background="{DynamicResource DarkBackground}">
         <ComboBox DockPanel.Dock="Top" HorizontalAlignment="Stretch" Margin="3" Style="{StaticResource JoltCombobox}" 
                     ItemsSource="{Binding RequestUrls}" IsEditable="True" IsReadOnly="True"
                     SelectedIndex="{Binding RequestUrlsLastIndex}"/>
@@ -28,7 +28,7 @@
                StretchDirection="DownOnly" HorizontalAlignment="Left"
                DockPanel.Dock="Top"/>
 
-        <StatusBar Background="#C1C1C1" DockPanel.Dock="Bottom" FontFamily="./fonts/#Lato">
+        <StatusBar Background="{DynamicResource LightBackground}" DockPanel.Dock="Bottom" FontFamily="./fonts/#Lato">
             <Label Content="{Binding GameId}" ContentStringFormat="Game: {0}"/>
             <Separator />
             <Label Content="{Binding User.Username}" ContentStringFormat="Logged in user: {0}"/>
@@ -84,7 +84,7 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0" Background="#3E3E3E">
+                    <Grid Grid.Row="0" Background="{DynamicResource DarkBackground}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition />
@@ -95,15 +95,15 @@
                            Source="{Binding User.AvatarUrl}" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
 
                         <StackPanel Grid.Column="1" Margin="20">
-                            <Label Content="{Binding User.Username}" FontSize="32" Foreground="#EEEEEE" Padding="0"/>
+                            <Label Content="{Binding User.Username}" FontSize="32" Foreground="{DynamicResource Foreground}" Padding="0"/>
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="{Binding User.SignedUp}" ContentStringFormat="Signed Up: {0} | " FontSize="12" Foreground="#7E7E7E" Padding="0" />
-                                <Label Content="{Binding User.LastLoggedIn}" ContentStringFormat="Last Logged In: {0}" FontSize="12" Foreground="#7E7E7E" Padding="0"/>
+                                <Label Content="{Binding User.SignedUp}" ContentStringFormat="Signed Up: {0} | " FontSize="12" Foreground="{DynamicResource MediumDarkForeground}" Padding="0" />
+                                <Label Content="{Binding User.LastLoggedIn}" ContentStringFormat="Last Logged In: {0}" FontSize="12" Foreground="{DynamicResource MediumDarkForeground}" Padding="0"/>
                             </StackPanel>                            
                         </StackPanel>
                         <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="20">
-                            <Label Content="{Binding User.Type, Converter={StaticResource ToUpperCaseConverter}}" Background="#31D6FF" VerticalAlignment="Top" Margin="5 0"/>
-                            <Label Content="{Binding User.Status, Converter={StaticResource ToUpperCaseConverter}}" Background="#FF3FAC" VerticalAlignment="Top" Margin="0 0 5 0"/>
+                            <Label Content="{Binding User.Type, Converter={StaticResource ToUpperCaseConverter}}" Background="{DynamicResource BlueHighlight}" VerticalAlignment="Top" Margin="5 0"/>
+                            <Label Content="{Binding User.Status, Converter={StaticResource ToUpperCaseConverter}}" Background="{DynamicResource PinkHighlight}" VerticalAlignment="Top" Margin="0 0 5 0"/>
                         </StackPanel>
                     </Grid>
 
@@ -173,8 +173,8 @@
                                     </DockPanel>
 
                                     <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="10">
-                                        <Label Content="{Binding Difficulty, Converter={StaticResource EnumUpperCaseConverter}}" Background="#31D6FF" VerticalAlignment="Top" Margin="5 0"/>
-                                        <Label Content="{Binding Achieved}" Background="#FF3FAC" VerticalAlignment="Top" Margin="0 0 5 0"/>
+                                        <Label Content="{Binding Difficulty, Converter={StaticResource EnumUpperCaseConverter}}" Background="{DynamicResource BlueHighlight}" VerticalAlignment="Top" Margin="5 0"/>
+                                        <Label Content="{Binding Achieved}" Background="{DynamicResource PinkHighlight}" VerticalAlignment="Top" Margin="0 0 5 0"/>
                                     </StackPanel>
                                 </Grid>
                             </DataTemplate>

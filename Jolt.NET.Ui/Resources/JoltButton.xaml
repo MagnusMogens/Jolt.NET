@@ -4,33 +4,33 @@
 
     <ControlTemplate TargetType="{x:Type Button}" x:Key="JoltButtonCT">
         <Border Background="{TemplateBinding Background}">
-            <Grid FlowDirection="LeftToRight">
+            <Grid>
                 <fa:FontAwesome Icon="ChevronRight" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"
-                                                Foreground="#CCFF00" FontSize="20" FontWeight="Normal"/>
+                                                Foreground="{DynamicResource GreenHighlight}" FontSize="20" FontWeight="Normal"/>
                 <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0" />
             </Grid>
         </Border>
 
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#2F7F6F" />
-                <Setter Property="Foreground" Value="#CCFF00" />
+                <Setter Property="Background" Value="{DynamicResource DarkButtonBackgroundHighlight}" />
+                <Setter Property="Foreground" Value="{DynamicResource GreenHighlight}" />
             </Trigger>
 
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="#555555" />
-                <Setter Property="Foreground" Value="#FFFFFF" />
+                <Setter Property="Background" Value="{DynamicResource DarkButtonBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LightForeground}" />
             </Trigger>
 
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="#AAAAAA" />
+                <Setter Property="Background" Value="{DynamicResource DisabledBackground}" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style TargetType="{x:Type Button}" x:Key="JoltButton">
-        <Setter Property="Background" Value="#555555" />
-        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="Background" Value="{DynamicResource DarkButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource LightForeground}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FontFamily" Value="./fonts/#Lato-Bold" />
         <Setter Property="FontWeight" Value="Bold" />

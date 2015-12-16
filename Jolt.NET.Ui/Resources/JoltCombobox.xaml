@@ -2,13 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:fa="http://schemas.fontawesome.io/icons/">
 
-    <SolidColorBrush x:Key="ComboBoxNormalBorderBrush" Color="#222" />
-    <SolidColorBrush x:Key="ComboBoxNormalBackgroundBrush" Color="#555" />
-    <SolidColorBrush x:Key="ComboBoxNormalForegroundBrush" Color="#FFF" />
-    <SolidColorBrush x:Key="ComboBoxDisabledForegroundBrush" Color="#DDD" />
-    <SolidColorBrush x:Key="ComboBoxDisabledBackgroundBrush" Color="#AAA" />
-    <SolidColorBrush x:Key="ComboBoxDisabledBorderBrush" Color="#FF8BAE00" />
-
     <ControlTemplate TargetType="ToggleButton" x:Key="ComboBoxToggleButtonTemplate">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -16,32 +9,32 @@
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
             <Border Grid.ColumnSpan="2" Name="Border"
-              BorderBrush="{StaticResource ComboBoxNormalBorderBrush}" 
+              BorderBrush="{DynamicResource DarkBorder}" 
               CornerRadius="0" BorderThickness="0" 
-              Background="{StaticResource ComboBoxNormalBackgroundBrush}" />
-            <Border Grid.Column="1" Margin="2" BorderBrush="#444" Name="ButtonBorder"
+              Background="{DynamicResource DarkButtonBackground}" />
+            <Border Grid.Column="1" Margin="2" BorderBrush="{DynamicResource DisabledBackground}" Name="ButtonBorder"
               CornerRadius="0, 0, 0, 0" BorderThickness="0, 0, 0, 0" 
-              Background="{StaticResource ComboBoxNormalBackgroundBrush}" />
+              Background="{DynamicResource DarkButtonBackground}" />
 
             <Path Name="Arrow" Grid.Column="1" 
             Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
-            HorizontalAlignment="Center" Fill="#CCFF00"
+            HorizontalAlignment="Center" Fill="{DynamicResource GreenHighlight}"
             VerticalAlignment="Center" />
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="UIElement.IsMouseOver" Value="True">
-                <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="#222"/>
+                <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="{DynamicResource DarkBorder}"/>
             </Trigger>
             <Trigger Property="ToggleButton.IsChecked" Value="True">
-                <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="#222"/>
-                <Setter Property="Shape.Fill" TargetName="Arrow" Value="#2F7F6F"/>
+                <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="{DynamicResource DarkBorder}"/>
+                <Setter Property="Shape.Fill" TargetName="Arrow" Value="{DynamicResource DarkButtonBackgroundHighlight}"/>
             </Trigger>
             <Trigger Property="UIElement.IsEnabled" Value="False">
-                <Setter Property="Panel.Background" TargetName="Border" Value="{StaticResource ComboBoxDisabledBackgroundBrush}"/>
-                <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="{StaticResource ComboBoxDisabledBackgroundBrush}"/>
-                <Setter Property="Border.BorderBrush" TargetName="ButtonBorder" Value="{StaticResource ComboBoxDisabledBorderBrush}"/>
-                <Setter Property="TextElement.Foreground" Value="{StaticResource ComboBoxDisabledForegroundBrush}"/>
-                <Setter Property="Shape.Fill" TargetName="Arrow" Value="#999"/>
+                <Setter Property="Panel.Background" TargetName="Border" Value="{DynamicResource DisabledBackground}"/>
+                <Setter Property="Panel.Background" TargetName="ButtonBorder" Value="{DynamicResource DisabledBackground}"/>
+                <Setter Property="Border.BorderBrush" TargetName="ButtonBorder" Value="{DynamicResource SelectedHighlight}"/>
+                <Setter Property="TextElement.Foreground" Value="{DynamicResource DisabledForeground}"/>
+                <Setter Property="Shape.Fill" TargetName="Arrow" Value="{DynamicResource DisabledBackground}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -64,7 +57,7 @@
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
-                                            <EasingColorKeyFrame KeyTime="0" Value="#FF8BAE00" />
+                                            <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource SelectedHighlightColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -72,7 +65,7 @@
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
-                                            <EasingColorKeyFrame KeyTime="0" Value="#DDDDDD" />
+                                            <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource DisabledForeground.Color}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -83,7 +76,7 @@
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
-                                            <EasingColorKeyFrame KeyTime="0" Value="#FF8BAE00" />
+                                            <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource SelectedHighlightColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -94,7 +87,7 @@
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
-                                            <EasingColorKeyFrame KeyTime="0" Value="#FF8BAE00" />
+                                            <EasingColorKeyFrame KeyTime="0" Value="{DynamicResource SelectedHighlightColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -126,7 +119,7 @@
 
                         <ContentPresenter Name="ContentSite" Margin="10, 8, 28, 8" IsHitTestVisible="False"
                               HorizontalAlignment="Left" VerticalAlignment="Center" 
-                              TextBlock.Foreground="{StaticResource ComboBoxNormalForegroundBrush}"
+                              TextBlock.Foreground="{DynamicResource LightForeground}"
                               Content="{TemplateBinding ComboBox.SelectionBoxItem}" 
                               ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}"
                               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"/>
@@ -134,7 +127,7 @@
                                  IsReadOnly="{TemplateBinding IsReadOnly}"
                                  Visibility="Hidden" Background="Transparent"
                                  HorizontalAlignment="Left" VerticalAlignment="Center"
-                                 Focusable="True" Foreground="White">
+                                 Focusable="True" Foreground="{DynamicResource LightForeground}">
                             <TextBox.Template>
                                 <ControlTemplate TargetType="TextBox" >
                                     <Border Name="PART_ContentHost" Focusable="False" />
@@ -149,11 +142,11 @@
                             <Grid Name="DropDown" SnapsToDevicePixels="True"
                                   MinWidth="{TemplateBinding FrameworkElement.ActualWidth}"
                                   MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}">
-                                <Border Name="DropDownBorder" Background="{StaticResource ComboBoxNormalBackgroundBrush}" 
+                                <Border Name="DropDownBorder" Background="{DynamicResource DarkButtonBackground}" 
                                         CornerRadius="0" BorderThickness="0" 
-                                        BorderBrush="{StaticResource ComboBoxNormalBorderBrush}"/>
+                                        BorderBrush="{DynamicResource DarkBorder}"/>
                                 <ScrollViewer SnapsToDevicePixels="True">
-                                    <ItemsPresenter TextBlock.Foreground="{StaticResource ComboBoxNormalForegroundBrush}"
+                                    <ItemsPresenter TextBlock.Foreground="{DynamicResource LightForeground}"
                                                     KeyboardNavigation.DirectionalNavigation="Contained" />
                                 </ScrollViewer>
                             </Grid>
@@ -164,7 +157,7 @@
                             <Setter Property="FrameworkElement.MinHeight" TargetName="DropDownBorder" Value="95"/>
                         </Trigger>
                         <Trigger Property="UIElement.IsEnabled" Value="False">
-                            <Setter Property="TextElement.Foreground" Value="{StaticResource ComboBoxDisabledForegroundBrush}"/>
+                            <Setter Property="TextElement.Foreground" Value="{DynamicResource DisabledForeground}"/>
                         </Trigger>
                         <Trigger Property="ItemsControl.IsGrouping" Value="True">
                             <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
