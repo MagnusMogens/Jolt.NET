@@ -4,7 +4,7 @@
 
     <ControlTemplate TargetType="{x:Type Button}" x:Key="JoltButtonCT">
         <Border Background="{TemplateBinding Background}">
-            <Grid>
+            <Grid FlowDirection="LeftToRight">
                 <fa:FontAwesome Icon="ChevronRight" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"
                                                 Foreground="#CCFF00" FontSize="20" FontWeight="Normal"/>
                 <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0" />
@@ -13,7 +13,7 @@
 
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource DarkBlueGreen.Color}" />
+                <Setter Property="Background" Value="#2F7F6F" />
                 <Setter Property="Foreground" Value="#CCFF00" />
             </Trigger>
 
