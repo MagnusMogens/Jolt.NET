@@ -33,7 +33,7 @@ namespace Jolt.NET.Helper
             return tempUrl;
         }
 
-        #region UrlPath.cs from .NET 3.5
+        #region Part of 'UrlPath.cs' from .NET 3.5
         
         internal static string AppendSlashToPathIfNeeded(string path)
         {

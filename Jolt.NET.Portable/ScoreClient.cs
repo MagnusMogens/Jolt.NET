@@ -120,7 +120,7 @@ namespace Jolt.NET
                                                        { RequestParameter.GameId, Settings.Instance.GameId },
                                                        { RequestParameter.Score, score},
                                                        { RequestParameter.Sort, sort.ToString() },
-                                                       {RequestParameter.Guest, name }
+                                                       { RequestParameter.Guest, name }
                                                    };
 
             if (tableId >= 0)

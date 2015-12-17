@@ -26,11 +26,11 @@ namespace Jolt.NET.UI.ViewModels
             set { Set(() => Trophies, ref _trophies, value); }
         }
 
-        private bool _fetchAvhieved;
+        private bool _fetchAchieved;
         public bool FetchAchieved
         {
-            get { return _fetchAvhieved; }
-            set { Set(() => FetchAchieved, ref _fetchAvhieved, value); }
+            get { return _fetchAchieved; }
+            set { Set(() => FetchAchieved, ref _fetchAchieved, value); }
         }
 
         public User User

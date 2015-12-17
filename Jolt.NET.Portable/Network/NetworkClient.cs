@@ -72,25 +72,38 @@ namespace Jolt.NET.Network
         {
             var usedFormat = format == ReturnFormat.Unknown ? Format : format;
 
+            // if there is a user whom is not authenticated, the request action must be 'auth'.
             if (user != null && 
                 !Settings.Instance.IsAuthenticated(user) && 
                 action != RequestAction.Auth)
                 throw new Exceptions.UserNotAuthenticatedException(user.Username);
+            
+            string param = ConcatenateRequestParameters(usedFormat, parameters);
+            string url = BuildUrl(type, action, usedFormat, param);
+            return BuildRequest(url);
+        }
 
-            // Concatenate request parameters.
+        private static string ConcatenateRequestParameters(ReturnFormat format, IDictionary<RequestParameter, string> parameters)
+        {
             string param = "";
             foreach (KeyValuePair<RequestParameter, string> parameter in parameters)
             {
-                param += usedFormat == ReturnFormat.Unknown && parameters.First().Equals(parameter) ? "?" : "&";
+                param += format == ReturnFormat.Unknown && parameters.First().Equals(parameter) ? "?" : "&";
                 param += parameter.Key.GetDescription() + "=" + parameter.Value;
             }
+            return param;
+        }
 
-            // Combine url
+        private static string BuildUrl(RequestType type, RequestAction action, ReturnFormat format, string parameters)
+        {
             string url = BaseAddress.UrlCombine(APIv1, type.GetDescription(), action.GetDescription(),
-                                                 (usedFormat.GetDescription() + param));
+                                                 (format.GetDescription() + parameters));
             url += SignatureKey + GetRequestSignature(url);
+            return url;
+        }
 
-            // Create and configure request.
+        private static WebRequest BuildRequest(string url)
+        {
             var request = WebRequest.Create(url);
             NewUrlCreated?.Invoke(null, new NetworkEventArgs(url));
 
