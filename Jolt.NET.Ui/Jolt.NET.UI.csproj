@@ -225,7 +225,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Jolt.NET.Ico.White.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Jolt.NET.Logo.png" />
   </ItemGroup>
