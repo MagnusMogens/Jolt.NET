@@ -8,21 +8,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>       
       </button>
-      <a class="navbar-brand" href="#">Jolt.NET</a>
+      <a class="navbar-brand" analytics-on="click" analytics-event="Home" href="#/">Jolt.NET</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse" ng-controller="HeaderController">
       <ul class="nav navbar-nav">
-        <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
-        <li ng-class="{ active: isActive('/test-center')}"><a href="#/test-center">Test Center</a></li>
+        <li ng-class="{ active: isActive('/')}"><a analytics-on="click" analytics-event="Home" href="#/">Home</a></li>
+        <li ng-class="{ active: isActive('/test-center')}"><a analytics-on="click" analytics-event="TestCenter" href="#/test-center">Test Center</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li ng-class="{ active: isActive('/doc/gameclient')}"><a href="#/doc/gameclient">Game Client</a></li>
-            <li ng-class="{ active: isActive('/doc/sessionmanager')}"><a href="#/doc/session-manager">Session Manager</a></li>
+            <li ng-class="{ active: isActive('/doc/gameclient')}"><a analytics-on="click" analytics-event="GameClient" href="#/doc/gameclient">Game Client</a></li>
+            <li ng-class="{ active: isActive('/doc/sessionmanager')}"><a analytics-on="click" analytics-event="SessionManager" href="#/doc/session-manager">Session Manager</a></li>
             <li role="separator" class="divider"></li>
-            <li ng-class="{ active: isActive('/doc/trophy')}"><a href="#/doc/trophy">Trophy</a></li>
-            <li ng-class="{ active: isActive('/doc/datastorage')}"><a href="#/doc/data-storage">Data Storage </a></li>
-            <li ng-class="{ active: isActive('/doc/score')}"><a href="#/doc/score">Score</a></li>
+            <li ng-class="{ active: isActive('/doc/trophy')}"><a analytics-on="click" analytics-event="Trophy" href="#/doc/trophy">Trophy</a></li>
+            <li ng-class="{ active: isActive('/doc/datastorage')}"><a analytics-on="click" analytics-event="DataStorage" href="#/doc/data-storage">Data Storage </a></li>
+            <li ng-class="{ active: isActive('/doc/score')}"><a analytics-on="click" analytics-event="Score" href="#/doc/score">Score</a></li>
           </ul>
         </li>
         <!--<li ng-class="{ active: isActive('/contact')}"><a href="#/contact">Contact</a></li>-->
