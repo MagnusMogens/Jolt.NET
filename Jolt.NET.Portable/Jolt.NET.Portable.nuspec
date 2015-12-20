@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/MagnusMogens/Jolt.NET/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MagnusMogens/Jolt.NET</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/MagnusMogens/Jolt.NET/master/Jolt.NET.Ui/Resources/Jolt.NET.Logo.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Implementation of the GameJolt API in version 1.0</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>API GameJolt Jolt Wrapper</tags>
+  </metadata>
+</package>

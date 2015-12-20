@@ -3,6 +3,7 @@
   "version": 1,
   "targets": {
     ".NETFramework,Version=v4.6": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.NETCore/5.0.0": {
         "dependencies": {
           "Microsoft.CSharp": "[4.0.0, )",
@@ -702,6 +703,7 @@
       }
     },
     ".NETFramework,Version=v4.6/win-x64": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.NETCore/5.0.0": {
         "dependencies": {
           "Microsoft.CSharp": "[4.0.0, )",
@@ -1425,6 +1427,7 @@
       }
     },
     ".NETFramework,Version=v4.6/win-x86": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.NETCore/5.0.0": {
         "dependencies": {
           "Microsoft.CSharp": "[4.0.0, )",
@@ -2148,6 +2151,7 @@
       }
     },
     ".NETPlatform,Version=v5.0": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -3045,6 +3049,7 @@
       }
     },
     "DNXCore,Version=v5.0": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -4233,6 +4238,7 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x64": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -5635,6 +5641,7 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x86": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -7037,6 +7044,7 @@
       }
     },
     "UAP,Version=v10.0": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -8271,6 +8279,7 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -9606,6 +9615,7 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -10913,6 +10923,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -12253,6 +12264,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -13560,6 +13572,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -14900,6 +14913,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {},
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -16208,6 +16222,24 @@
     }
   },
   "libraries": {
+    "CreateNewNuGetPackageFromProjectAfterEachBuild/1.8.8": {
+      "sha512": "MUkuub7U0EBg1EYQQXYpuf5x3KnK7SCJXTmpKxxVO719TfCY2SbNILTDppOgmvVODU4us+N/fAcc9C+5HOR9Sw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "content/_CreateNewNuGetPackage/Config.ps1",
+        "content/_CreateNewNuGetPackage/DoNotModify/CreateNuGetPackage.ps1",
+        "content/_CreateNewNuGetPackage/DoNotModify/New-NuGetPackage.ps1",
+        "content/_CreateNewNuGetPackage/DoNotModify/NuGet.exe",
+        "content/_CreateNewNuGetPackage/DoNotModify/UploadNuGetPackage.ps1",
+        "content/_CreateNewNuGetPackage/RunMeToUploadNuGetPackage.cmd",
+        "CreateNewNuGetPackageFromProjectAfterEachBuild.nuspec",
+        "package/services/metadata/core-properties/a28c0fcd618449e78d815c96b09c22ce.psmdcp",
+        "tools/Install.ps1",
+        "tools/Uninstall.ps1"
+      ]
+    },
     "Microsoft.CSharp/4.0.0": {
       "sha512": "oWqeKUxHXdK6dL2CFjgMcaBISbkk+AqEg+yvJHE4DElNzS4QaTsCflgkkqZwVlWby1Dg9zo9n+iCAMFefFdJ/A==",
       "type": "Package",
@@ -19207,6 +19239,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "CreateNewNuGetPackageFromProjectAfterEachBuild >= 1.8.8",
       "Microsoft.NETCore >= 5.0.0",
       "Microsoft.NETCore.Portable.Compatibility >= 1.0.0",
       "PCLCrypto >= 1.1.86-beta",

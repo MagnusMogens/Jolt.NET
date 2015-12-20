@@ -4,15 +4,15 @@ using System.Reflection;
 // Allgemeine Informationen über eine Assembly werden über folgende 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("Jolt.NET.Portable")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Jolt.NET")]
+[assembly: AssemblyDescription("A GameJolt API wrapper")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Jolt.NET.Portable")]
+[assembly: AssemblyCompany("Magnus")]
+[assembly: AssemblyProduct("Jolt.NET")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: NeutralResourcesLanguage("de")]
+[assembly: NeutralResourcesLanguage("en")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
