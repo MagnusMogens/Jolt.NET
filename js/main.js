@@ -1,4 +1,4 @@
-var app = angular.module('jolt-net-app', ['ngRoute', 'hljs', 'angulartics', 'angulartics.google.analytics']);
+var app = angular.module('jolt-net-app', ['ngRoute', 'hljs']);
 
 app.config(function($routeProvider) {
 	$routeProvider
